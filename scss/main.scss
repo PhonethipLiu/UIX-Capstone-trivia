@@ -1,0 +1,27 @@
+$font-head:  'Montserrat', sans-serif;
+$font-body:  'Lato', sans-serif;
+$black-color: #1b1d28;
+
+
+
+html,
+body,
+ul,
+ol {
+  margin:  0;
+  padding: 0;
+}
+
+nav.navbar {
+    margin-bottom: 3rem;
+    overflow-x: hidden;
+    position: fixed;
+    width: 100%;
+    padding-bottom: 1rem;
+    z-index: 100;
+}
+
+.carousel.slide {
+    height: 400px;
+    z-index: -1;
+}
