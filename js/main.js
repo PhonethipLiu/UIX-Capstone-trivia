@@ -8,7 +8,7 @@ $(document).ready(function() {
     // All the JavaScript that depends on jQuery will be written here
 
     $('.carousel').carousel({
-        interval: 2000
+        interval: 5000
       });
     
       $('#myCarousel').on('slid.bs.carousel', function (e) {

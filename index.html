@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Quiz-zes Phonethip's Capstone</title>
+    <title>Quiz-it Phonethip's Capstone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Google fonts -->
@@ -21,28 +21,27 @@
     <header>
         <nav class="navbar fixed-top navbar-dark bg-dark">
             <a class="navbar-brand" href="#">
-              <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
-              Quiz-it
-            </a>
+              <img src="" width="30" height="60" class="d-inline-block align-top" alt="Quiz-it"> Quiz-it</a>
             <ul class="nav justify-content-end">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                  </ul>
-          </nav>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Hi Bob</a>
+                </li>
+            </ul>
+        </nav>
+        
     </header>
     
-
     <!-- Main -->
 
-    <!-- Carosuel of 3 featured Quiz-zes -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <section class="main-wrapper"></section>
+        <!-- Carosuel of 3 featured Quiz-zes -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -50,13 +49,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                <img class="d-block w-100" src="..." alt="First slide">
+                <img class="d-block w-100" src="imgs/image1_Test.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Second slide">
+                <img class="d-block w-100" src="imgs/Asian_test.png" alt="Second slide">
                 </div>
                 <div class="carousel-item">
-                <img class="d-block w-100" src="..." alt="Third slide">
+                <img class="d-block w-100" src="imgs/art_test.png" alt="Third slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -67,37 +66,39 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-     </div><!-- end Carosuel of 3 featured Quiz-zes -->
+        </div><!-- end Carosuel of 3 featured Quiz-zes -->
 
+        
+    </section> <!-- end main-wrapper -->    
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12"> 
-                <h1>HI BOB</h1>
-            </div> 
-
-            <div class="col-4" id="game--bar">User profile here3 column for quiz options
-                <!-- image cards for quiz -->
-                <div class="card mb-3">
-                        <img class="card-img-top" src="..." alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div> <!-- ** close ** image cards for quiz -->
-            </div>
-            
-            <div class="col-8">
-                <h4>.col-8 column grid for the quiz display area once the user selects a game they want to play.</h4>
-
+    <section> <!-- start cards/output area  -->
+        <div class="d-flex p-2 user-area" > 
+                <h5>HI BOB</span></h5>
+        </div>
+        <div class="container">     
+            <div class="row"> <section> <!-- start cards/output area  -->
+                 <div class="col-4" id="game--bar">
+                    <p>User profile here3 column for quiz options</p>
+                    <!-- image cards for quiz -->
+                    <div class="card mb-3">
+                            <img class="card-img-top" src="..." alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div> <!-- ** close ** image cards for quiz -->
+                </div>
                 
-            </div> <!-- ** close ** col-8 -->
+                <div class="col-6">
+                    <h4>.col-8 column grid for the quiz display area once the user selects a game they want to play.</h4>
+                </div> <!-- ** close ** col-8 -->
+            </div> <!-- ** close ** row -->
+        
+    </section> <!-- end cards/output area  -->
 
-        </div> <!-- ** close ** row -->
-    </div>
-    
+
+
     <!-- footer -->
     <footer class="C_footer">
         <p>Footer info will go here</p>

@@ -1,8 +1,28 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// Required
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+
+
+
+
+
 $font-head:  'Montserrat', sans-serif;
 $font-body:  'Lato', sans-serif;
 $black-color: #1b1d28;
 
 
+//Main body styles
 
 html,
 body,
@@ -12,16 +32,54 @@ ol {
   padding: 0;
 }
 
+// Navigation styles
+
 nav.navbar {
-    margin-bottom: 3rem;
-    overflow-x: hidden;
+    // margin-bottom: 2rem;
+    // overflow-x: hidden;
     position: fixed;
     width: 100%;
-    padding-bottom: 1rem;
+    // padding-bottom: .5rem;
     z-index: 100;
 }
 
+.bg-dark {
+    background-color:rgba(3, 3, 3, 0.9) !important;
+}
+
+// Carousel area styles
+
+.main-wrapper{
+    // margin: 1rem 0;
+    padding-bottom: 2rem;
+   
+}
+
 .carousel.slide {
-    height: 400px;
-    z-index: -1;
+    max-height: 500px !important;
+}
+
+
+//content area display
+// .test-stripe {
+//     background-color:red;
+//     width: 30%;
+// }
+
+// .v-line {
+//     border-right: 6px solid snow;
+//     height: auto;
+//     padding-left: 6px;
+//     align-content: flex-end;
+// }
+.user-area {
+    background-color: #1b1d28;
+    margin-top: 1rem;
+    color: snow;
+}
+
+// Footer area styles
+
+footer {
+
 }
