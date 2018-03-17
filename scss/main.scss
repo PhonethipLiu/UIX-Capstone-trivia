@@ -1,27 +1,76 @@
+
 $font-head:  'Montserrat', sans-serif;
 $font-body:  'Lato', sans-serif;
-$black-color: #1b1d28;
+$black-color: rgb(2, 2, 2);
 
 
+//Main body styles
 
 html,
-body,
-ul,
-ol {
+body,{
   margin:  0;
   padding: 0;
+  
 }
 
+// Navigation styles
+
 nav.navbar {
-    margin-bottom: 3rem;
+    // margin-bottom: 1rem;
     overflow-x: hidden;
     position: fixed;
     width: 100%;
-    padding-bottom: 1rem;
-    z-index: 100;
+    // padding-bottom: .5rem;
+    z-index: 100; 
+}
+// Nav bar background
+.bg-dark {
+    background-color:rgba(3, 3, 3, 1) !important;
+    box-shadow: 0px 5px 15px 5px rgba(2, 2, 2, 0.3);  
+}
+
+.carousel-wrapper {
+    max-width: 100%;
+
+}
+
+section.user-wrapper {
+    background-color: rgb(141, 139, 139);
+    color: snow;
+    padding: 1rem 2rem;
+    margin-top: 5rem !important;
+    font-style: .8rem;
+}
+
+
+// Carousel area styles
+
+.main-wrapper {
+    // margin-top: 1rem !important;
+    padding: 0 3rem;
 }
 
 .carousel.slide {
-    height: 400px;
-    z-index: -1;
+    max-height: 500px !important;
+    box-shadow: 3px 5px 20px 5px rgba(2, 2, 2, 0.3); 
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+// Main content area
+.quiz-output-area {
+    margin: 2rem 3rem 3rem 3rem;
+}
+
+// Footer area styles
+
+.foot-wrapper {
+    background-color: $black-color;
+    width: 100%;
+    color:  rgb(114, 113, 113);
+    padding: 2rem 4rem;
+}
+
+footer p {
+    font-size: .7rem;
 }
