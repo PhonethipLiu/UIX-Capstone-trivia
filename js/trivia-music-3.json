@@ -1,0 +1,149 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "The Red Hot Chili Pepper song &quot;Give It Away&quot; is from what album?",
+            "correct_answer": "Blood Sugar Sex Magik",
+            "incorrect_answers": [
+                "One Hot Minute",
+                "By the Way",
+                "Stadium Arcadium"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "EDM producer Marshmello performs live wearing clothes and a marshmallow mask of what colour?",
+            "correct_answer": "White",
+            "incorrect_answers": [
+                "Black",
+                "Blue",
+                "Yellow"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which of these languages was NOT included in the 2016 song &quot;Don&#039;t Mind&quot; by Kent Jones?",
+            "correct_answer": "Portuguese",
+            "incorrect_answers": [
+                "Japanese",
+                "French",
+                "Spanish"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Finish these lyrics from the 2016 song &quot;Panda&quot; by Desiigner: &quot;I got broads in _______&quot;.",
+            "correct_answer": "Atlanta",
+            "incorrect_answers": [
+                "Savannah",
+                "Augusta",
+                "Marietta"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the relationship between the band members of American rock band King of Leon?",
+            "correct_answer": "Brothers &amp; cousins",
+            "incorrect_answers": [
+                "Childhood friends",
+                "Former classmates",
+                "Fraternity house members"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which song in Drake&#039;s &quot;Views&quot; features Future?",
+            "correct_answer": "Grammys",
+            "incorrect_answers": [
+                "Too Good",
+                "Faithful",
+                "Pop Style"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Kanye West&#039;s &quot;Gold Digger&quot; featured which Oscar-winning actor?",
+            "correct_answer": "Jamie Foxx",
+            "incorrect_answers": [
+                "Alec Baldwin",
+                "Dwayne Johnson",
+                " Bruce Willis"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "&quot;Drink the Sea&quot; is an album by which electronic music artist?",
+            "correct_answer": "The Glitch Mob",
+            "incorrect_answers": [
+                "Avicii",
+                "XXYYXX",
+                "Flux Pavilion"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In the Panic! At the Disco&#039;s song &quot;Nothern Downpour&quot;, which lyric follows &#039;I know the world&#039;s a broken bone&#039;.",
+            "correct_answer": "&quot;So melt your headaches call it home&quot;",
+            "incorrect_answers": [
+                "&quot;So sing your song until you&#039;re home&quot;",
+                "&quot;So let them know they&#039;re on their own&quot;",
+                "&quot;So start a fire in their cold stone&quot;"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "When did Tame Impala release their second album?",
+            "correct_answer": "2012",
+            "incorrect_answers": [
+                "2015",
+                "2010",
+                "1967"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which year did &quot;Caravan Palace&quot; release their first album?",
+            "correct_answer": "2008",
+            "incorrect_answers": [
+                "2000",
+                "2015",
+                "2004"
+            ]
+        },
+        {
+            "category": "Entertainment: Music",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which member of &quot;The Beatles&quot; narrated episodes of &quot;Thomas the Tank Engine&quot;?",
+            "correct_answer": "Ringo Starr",
+            "incorrect_answers": [
+                "George Harrison",
+                "John Lennon",
+                "Paul McCartney"
+            ]
+        }
+    ]
+}

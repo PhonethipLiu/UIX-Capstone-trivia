@@ -39,16 +39,16 @@
         <section class ="user-wrapper">
                 <div class="container ">
                     <div class="row">
-                        <div class="col">
+                        <div class="col-sm">
                             Hi Bob
                             </div>
-                        <div class="col">
-                            1 of 3
+                        <div class="col-sm">
+                            Games played
                             </div>
-                        <div class="col">
-                            2 of 3
+                        <div class="col-sm">
+                            Stats
                             </div>
-                        <div class="col">
+                        <div class="col-sm">
                             3 of 3
                             </div>
                     </div>
@@ -92,8 +92,11 @@
         
         <div class="container">     
             <div class="row">      
-                <div class="col-8-sm">
-                        <h4>Quiz title: Time to play</h4>
+                <div class="col-7-sm">
+                        <label>
+                               Quiz
+                              </label>
+                        <h2>What's your spirit animal?</h2>
                         <ol>
                             <li> <!-- Q1  -->
                                 <h5>Will you be the one?</h5>
@@ -114,16 +117,9 @@
                             <li> <!-- Q2  -->
                                 <h5>Will you be the one?</h5>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                      Default checkbox
-                                    </label>
-                                  </div>
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-                                    <label class="form-check-label" for="defaultCheck2">
-                                      Disabled checkbox
-                                    </label>
+                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1">
+                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
+                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
                                   </div>
                              </li>
 
@@ -159,27 +155,60 @@
                                         </label>
                                       </div>
                                  </li>
-
-                       
                         </ol>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Get your result
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Quiz Result:  Business persona's spirit animal:</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <!-- start modal pop-up results-->
+                                <div class="modal-body">
+                                    <!-- Media object modal pop-up results-->
+                                    <div class="media">
+                                        <img class="mr-3" width="60" height="60" src="imgs/test-rat.svg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <h5 class="mt-0">You're a Rat!</h5>
+                                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary btn-sm">Save results</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- end modal pop-up results-->
+
                     </div> <!-- ** close ** col-8 -->
 
-                <div class="col-4-sm" id="game--bar">
+                <div class="col-3-sm" id="game--bar">
                     <h4>More Games</h4>
-                    <!-- image cards for quiz -->
-                    <div class="card">
+                    
+                    <div class="card"> <!-- image cards for quiz -->
                         <img class="card-img-top" src="..." alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
-                        </div> 
-                        <!-- ** close ** image cards for quiz -->
-                    </div>
-                
+                        </div> <!-- ** close ** image cards for quiz -->
+                        
+                    </div> <!-- ** close ** col 4 -->
             </div> <!-- ** close ** row -->
         </div>  <!-- ** close ** container -->
+   
     </section> <!-- end cards/output area  -->
 
 
