@@ -1,37 +1,28 @@
-
 $font-head:  'Montserrat', sans-serif;
 $font-body:  'Lato', sans-serif;
 $black-color: rgb(2, 2, 2);
 
 
 //Main body styles
-
 html,
-body,{
+body {
   margin:  0;
   padding: 0;
-  
 }
 
 // Navigation styles
-
-nav.navbar {
-    // margin-bottom: 1rem;
-    overflow-x: hidden;
-    position: fixed;
-    width: 100%;
-    // padding-bottom: .5rem;
-    z-index: 100; 
-}
+// nav.navbar {
+//     // margin-bottom: 1rem;
+//     overflow-x: hidden;
+//     position: fixed;
+//     width: 100%;
+//     // padding-bottom: .5rem;
+//     z-index: 100; 
+// }
 // Nav bar background
 .bg-dark {
     background-color:rgba(3, 3, 3, 1) !important;
-    box-shadow: 0px 5px 15px 5px rgba(2, 2, 2, 0.3);  
-}
-
-.carousel-wrapper {
-    max-width: 100%;
-
+    box-shadow: 0px 5px 15px 3px rgba(2, 2, 2, 0.2);  
 }
 
 section.user-wrapper {
@@ -42,28 +33,57 @@ section.user-wrapper {
     font-style: .8rem;
 }
 
-
 // Carousel area styles
-
-.main-wrapper {
-    // margin-top: 1rem !important;
-    padding: 0 3rem;
+img.d-block.w-100 { // why doesn't this work?
+   max-height: auto;
+   
 }
 
-.carousel.slide {
+.carousel-wrapper{
+    overflow: hidden;
     max-height: 500px !important;
-    box-shadow: 3px 5px 20px 5px rgba(2, 2, 2, 0.3); 
-    position: relative;
+    box-shadow: 3px 5px 30px 10px rgba(99, 98, 99, 0.297); 
     margin-bottom: 2rem;
 }
 
+// .carousel.slide {
+//     // max-width: 80%;
+//     // box-shadow: 3px 5px 30px 10px rgba(99, 98, 99, 0.297); 
+//     // position: relative;
+//     margin-bottom: 2rem;
+  
+// }
+
 // Main content area
+section.quiz-area {
+    margin: 2em 2em ;
+}
+
+#quiz-output-area li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 .quiz-output-area {
-    margin: 2rem 3rem 3rem 3rem;
+    margin: 3rem 2rem;
+}
+
+#game--list{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+input.btn {
+    margin-right: 1rem !important;
+    margin-top: .7rem !important;
+    padding: .2rem 1rem !important;
+}
+
+#game--list div.card {
+    margin-bottom: 2rem;
 }
 
 // Footer area styles
-
 .foot-wrapper {
     background-color: $black-color;
     width: 100%;

@@ -1,0 +1,125 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which 1973 film does Yul Brynner play a robotic cowboy who malfunctions and goes on a killing\tspree?",
+            "correct_answer": "Westworld",
+            "incorrect_answers": [
+                "Runaway",
+                "Android",
+                "The Terminators"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which 1955 film does Frank Sinatra play Nathan Detroit?",
+            "correct_answer": "Guys and Dolls",
+            "incorrect_answers": [
+                "Anchors Aweigh",
+                "From Here to Eternity",
+                "High Society"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the name of the robot in the 1951 science fiction film classic &#039;The Day the Earth Stood Still&#039;?",
+            "correct_answer": "Gort",
+            "incorrect_answers": [
+                "Robby",
+                "Colossus",
+                "Box"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Who played Batman in the 1997 film &quot;Batman and Robin&quot;?",
+            "correct_answer": "George Clooney",
+            "incorrect_answers": [
+                "Michael Keaton",
+                "Val Kilmer",
+                "Christian Bale"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "This movie contains the quote, &quot;What we&#039;ve got here is a failure to communicate.&quot;",
+            "correct_answer": "Cool Hand Luke",
+            "incorrect_answers": [
+                "Bonnie and Clyde",
+                "The Graduate",
+                "In the Heat of the Night"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which African country was the 2006 film &#039;Blood Diamond&#039; mostly set in?",
+            "correct_answer": "Sierra Leone",
+            "incorrect_answers": [
+                "Liberia",
+                "Burkina Faso",
+                "Central African Republic"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In what year was the movie &quot;Police Academy&quot; released?",
+            "correct_answer": "1984",
+            "incorrect_answers": [
+                "1986",
+                "1985",
+                "1983"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In The Lord of the Rings: The Fellowship of the Ring, which one of the following characters from the book was left out of the film?",
+            "correct_answer": "Tom Bombadil",
+            "incorrect_answers": [
+                "Strider",
+                "Barliman Butterbur",
+                "Celeborn"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Who is the director of the 1991 film &quot;Silence of the Lambs&quot;?",
+            "correct_answer": "Jonathan Demme",
+            "incorrect_answers": [
+                "Stanley Kubrick",
+                "Frank Darabont",
+                "Michael Bay"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Mark Wahlberg played the titular character of which 2008 video-game adaptation?",
+            "correct_answer": "Max Payne",
+            "incorrect_answers": [
+                "Alan Wake",
+                "Hitman",
+                "God Of War"
+            ]
+        }
+    ]
+}
