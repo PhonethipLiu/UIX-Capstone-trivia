@@ -1,6 +1,5 @@
 {
-    "response_code": 0,
-    "results": [
+    "trivia_art": [
         {
             "category": "Art",
             "type": "multiple",

@@ -11,14 +11,16 @@ body {
 }
 
 // Navigation styles
-// nav.navbar {
-//     // margin-bottom: 1rem;
-//     overflow-x: hidden;
-//     position: fixed;
-//     width: 100%;
-//     // padding-bottom: .5rem;
-//     z-index: 100; 
-// }
+nav.navbar {
+    // margin-bottom: 1rem;
+    overflow-x: hidden;
+    position: fixed;
+    width: 100%;
+    // padding-bottom: .5rem;
+    z-index: 100; 
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
 // Nav bar background
 .bg-dark {
     background-color:rgba(3, 3, 3, 1) !important;
@@ -41,9 +43,10 @@ img.d-block.w-100 { // why doesn't this work?
 
 .carousel-wrapper{
     overflow: hidden;
-    max-height: 500px !important;
+    max-height: 550px !important;
     box-shadow: 3px 5px 30px 10px rgba(99, 98, 99, 0.297); 
     margin-bottom: 2rem;
+    object-fit: contain;
 }
 
 // .carousel.slide {

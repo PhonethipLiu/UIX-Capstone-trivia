@@ -2,11 +2,14 @@
 
 console.log("Main.js is working");
 
-
+let $ = require('jquery'),
+  db = require("./db-interaction"),
+  templates = require("./dom-builder"),
+  user = require("./user");
+  
 // bootstrap carousel
 $(document).ready(function() {
     // All the JavaScript that depends on jQuery will be written here
-
     $('.carousel').carousel({
         interval: 5000
       });
@@ -16,7 +19,3 @@ $(document).ready(function() {
       });
   });
 
-  
-//   $('#myCarousel').carousel('1') // Will start sliding to the slide 1 and returns to the caller
-//   $('#myCarousel').carousel('2') // !! Will be ignored, as the transition to the slide 1 is not finished !!
-  
