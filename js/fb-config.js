@@ -15,12 +15,10 @@ var config = {
     apiKey: fbData.apiKey,
     authDomain: fbData.authDomain,
     databaseURL: fbData.databaseURL,
-    projectId: fbData.projectId,
-    storageBucket: fbData.storageBucket,
 };
 firebase.initializeApp(config);
 
-firebase.getFBsettings = function(){
+firebase.getFBsettings = () => {
       console.log("getFBsettings", config);
       return config;
 };
