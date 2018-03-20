@@ -1,9 +1,6 @@
 {
-    "quiz_art": [
+    "quiz_1": [
         {
-            "category": "Art",
-            "type": "multiple",
-            "difficulty": "hard",
             "question": "Painter Piet Mondrian (1872 - 1944) was a part of what movement?",
             "correct_answer": "Neoplasticism",
             "incorrect_answers": [
@@ -15,7 +12,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "medium",
             "question": "Which time signature is commonly known as &ldquo;Cut Time?&rdquo;",
             "correct_answer": "2/2",
             "incorrect_answers": [
@@ -27,7 +23,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "easy",
             "question": "Who painted the Sistine Chapel?",
             "correct_answer": "Michelangelo",
             "incorrect_answers": [
@@ -39,7 +34,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "hard",
             "question": "What French sculptor designed the Statue of Liberty? ",
             "correct_answer": "Fr&eacute;d&eacute;ric Auguste Bartholdi",
             "incorrect_answers": [
@@ -51,7 +45,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "medium",
             "question": "What nationality was the surrealist painter Salvador Dali?",
             "correct_answer": "Spanish",
             "incorrect_answers": [
@@ -63,7 +56,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "hard",
             "question": "Albrecht D&uuml;rer&#039;s birthplace and place of death were in...",
             "correct_answer": "N&uuml;rnberg",
             "incorrect_answers": [
@@ -75,7 +67,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "hard",
             "question": "What year did Albrecht D&uuml;rer create the painting &quot;The Young Hare&quot;?",
             "correct_answer": "1502",
             "incorrect_answers": [
@@ -87,7 +78,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "hard",
             "question": "What year was the Mona Lisa finished?",
             "correct_answer": "1504",
             "incorrect_answers": [
@@ -99,7 +89,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "easy",
             "question": "Who painted &quot;Swans Reflecting Elephants&quot;, &quot;Sleep&quot;, and &quot;The Persistence of Memory&quot;?",
             "correct_answer": "Salvador Dali",
             "incorrect_answers": [
@@ -111,7 +100,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "medium",
             "question": "Which of these are the name of a famous marker brand?",
             "correct_answer": "Copic",
             "incorrect_answers": [
@@ -123,7 +111,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "medium",
             "question": "Which artist&#039;s style was to use small different colored dots to create a picture?",
             "correct_answer": "Georges Seurat",
             "incorrect_answers": [
@@ -135,7 +122,6 @@
         {
             "category": "Art",
             "type": "multiple",
-            "difficulty": "hard",
             "question": "How many paint and pastel versions of &quot;The Scream&quot; is Norwegian painter Edvard Munch believed to have produced?",
             "correct_answer": "4",
             "incorrect_answers": [
