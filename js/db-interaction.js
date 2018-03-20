@@ -3,11 +3,11 @@
 let $ = require('jquery'),
     firebase = require("./fb-config");
 
-// Get trivial1 
+// Get trivial
 function getTrivia1(user) {
     console.log("url", firebase.getFBsettings().databaseURL);
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/trivia1.json?orderBy="uid"&equalTo="${user}"`
+        url: `${firebase.getFBsettings().databaseURL}/trivia.json?orderBy="uid"&equalTo="${user}"`
     }).done((trivia1Data) => {
         return trivia1Data;
     });
