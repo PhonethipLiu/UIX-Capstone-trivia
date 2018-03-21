@@ -10,7 +10,7 @@ let firebase = require("./fb-config"),
     
 
  // call logout when page loads to avoid currentUser.uid   
-db.logOut();
+// db.logOut();
 
 //listens for changed state
 firebase.auth().onAuthStateChanged((user) => {
