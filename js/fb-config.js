@@ -14,12 +14,14 @@ require("firebase/database");
 var config = {
     apiKey: fbData.apiKey,
     authDomain: fbData.authDomain,
-    databaseURL: fbData.databaseURL
+    databaseURL: fbData.databaseURL,
+    projectId: fbData.projectId,
+    storageBucket: fbData.storageBucket
 };
 firebase.initializeApp(config);
 
 firebase.getFBsettings = () => {
-    //   console.log("getFBsettings", config);
+      console.log("firebase getFBsettings", config);
       return config;
 };
 

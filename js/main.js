@@ -6,7 +6,21 @@ let $ = require('jquery'),
   db = require("./db-interaction"),
   templates = require("./dom-builder"),
   user = require("./user");
+
+let firebase = require("./fb-config");
   
+
+// GET ELEMENTS
+const preObject = document.getElementById('object');
+const dbRefObj = firebase.database().ref().child('object');
+
+//sync object changes
+dbRefObj.on('value', snap => {
+    preObject.innerText =JSON.stringify(snap.val(), null, 3);
+});
+
+
+
 // bootstrap carousel
 $(document).ready(function() {
     // All the JavaScript that depends on jQuery will be written here
@@ -36,3 +50,4 @@ $("#logout").click(() => {
     $("#login").removeClass("is-hidden");
     $("#logout").addClass("is-hidden");
 });
+

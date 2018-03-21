@@ -8,6 +8,10 @@ let firebase = require("./fb-config"),
         fbID: null
     };
     
+
+ // call logout when page loads to avoid currentUser.uid   
+db.logOut();
+
 //listens for changed state
 firebase.auth().onAuthStateChanged((user) => {
     console.log("onAuthStateChanged", user);
@@ -30,9 +34,9 @@ function setUser(val) {
 }
 
 //GET SAVE GAME RESULTS
-// function getUserResults(){
-//     return currentUser.results;
-// }
+function getUserResults(){
+    return currentUser.results;
+}
 
 function getUserObj(){
     return currentUser;
@@ -67,6 +71,8 @@ function checkUserFB(uid){
                     uid: uid
                 };
                 return tmpUser;
+            }).then((tmpUser) => {
+                return setUserVars(tmpUser);
             });
         } else {
             console.log("user: already a user", data);

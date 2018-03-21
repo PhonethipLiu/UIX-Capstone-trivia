@@ -1,38 +1,41 @@
 "use strict";
 
-let $ = require('jquery');
+console.log("dom builder in the haus");
+let $ = require('jquery'),
+    firebase = require("./fb-config");
 
 // ***** how do I fix this? ******** //
 
-// function makeGameQuestions(game){
+var gameCol = $("#quiz-display-area");
+var populateGameCol = $("#game--questions");
+ 
+
+
+// function makeGame(game){
 //     let gameDisplay = 
-//     $(`<div class="col-sm-8 quiz-display" id="quiz-display-area">
-//         <label> ${game.type}</label>
+//     $(`<label> ${game.id}</label>
 //         <h2>${game.name}</h2>
-//         <ol class= "game-questions">
-//         </ol>
-//         </div>`);
+//         <ol class= "game" id="game--questions">
+//         </ol>`);
+//     $("#quiz-display-area").html(gameDisplay);
 
-//     $(".quiz-display").html(makeGameQuestions);
-//     for(let q in game){
-//         let currentGame = game[q],
-//             gametype = $("<li>", {class: "game_title"}),
-//             question = $("<h5>", {class: "game_question"}).text(currentGame.title), 
-//             answerOptions = $("</h5>"),
+//     if(game.trivia) {
+//         for (let item in game) {
+//         let currentGame = game[item],
+//         console.log("trivia:", currentGame[i].q1 + currentGame[i].a1 );
+//         populateGameCol.append(
+//             `<li> <h5>${currentGame.q1}</h5>
+//                 <div class="form-check">
+//                     <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1" checked>
+//                     <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
+//                     <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
+//                 </div>
+//             </li>`);
+//         }
 //     }
-// };
-
-
-//             `<li> 
-//                 <h5>Will you be the one?</h5>
-                
-//                     <div class="form-check">
-//                         <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1" checked>
-//                         <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
-//                         <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
-//                     </div>
-//                 </li>`
-
-
-//     `);
 // }
+
+// Results of quiz and correct answers
+// var results = 0;
+
+// module.exports = { makeGame };

@@ -4,6 +4,7 @@ console.log("db-interaction working");
 
 let $ = require('jquery'),
     firebase = require("./fb-config"),
+    quiz = require("./dom-builder"),
     provider = new firebase.auth.GoogleAuthProvider();
 
 // *************************************
@@ -13,7 +14,7 @@ let $ = require('jquery'),
 // GET USER!!!! 
 function getFBDetails(user){
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy".indexOn"="uid"&equalTo="${user}"`
+        url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy="uid"&equalTo="${user}"`
     }).done((resolve) => {
         console.log("getFBDetails:", resolve);
         return resolve;
@@ -30,6 +31,7 @@ function addUserFB(userObj){
         data: JSON.stringify(userObj),
         dataType: 'json'
     }).done((fbID) => {
+        console.log("addUserFB:", fbID);
         return fbID;
     });
 }
@@ -41,6 +43,7 @@ function updateUserFB(userObj){
         data: JSON.stringify(userObj),
         dataType: 'json'
     }).done((userID) => {
+        console.log("user object", userObj);
         return userID;
     });
 }
@@ -83,6 +86,7 @@ function getGame(user) {
         url: `${firebase.getFBsettings().databaseURL}/trivia.json?orderBy="uid"&equalTo="${user}"`
     }).done((triviaData) => {
         return triviaData;
+
     });
 }
 
