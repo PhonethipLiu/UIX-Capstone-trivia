@@ -2,21 +2,52 @@
 
 console.log("Main.js is working");
 
+let $ = require('jquery'),
+  db = require("./db-interaction"),
+  templates = require("./dom-builder"),
+  user = require("./user");
+
+let firebase = require("./fb-config");
+  
+
+// GET ELEMENTS
+const preObject = document.getElementById('object');
+const dbRefObj = firebase.database().ref().child('object');
+
+//sync object changes
+dbRefObj.on('value', snap => {
+    preObject.innerText =JSON.stringify(snap.val(), null, 3);
+});
+
+
 
 // bootstrap carousel
 $(document).ready(function() {
     // All the JavaScript that depends on jQuery will be written here
-
-    $('.carousel').carousel({
-        interval: 5000
-      });
+    // $('.carousel').carousel( 
+    //     interval: 5000);
     
-      $('#myCarousel').on('slid.bs.carousel', function (e) {
-        $('#myCarousel').carousel('2'); // Will slide to the slide 2 as soon as the transition to slide 1 is finished
-      });
+  $('#myCarousel').on('slid.bs.carousel', function (e) {
+    $('#myCarousel').carousel('2'); // Will slide to the slide 2 as soon as the transition to slide 1 is finished
   });
+});
 
-  
-//   $('#myCarousel').carousel('1') // Will start sliding to the slide 1 and returns to the caller
-//   $('#myCarousel').carousel('2') // !! Will be ignored, as the transition to the slide 1 is not finished !!
-  
+$('#login').click(function() {
+    console.log("clicked login");
+    db.logInGoogle()
+    .then((result) => {
+    console.log("result from login", result.user.uid);
+    user.setUser(result.user.uid);
+    $("#login").addClass("is-hidden");
+    $("#logout").removeClass("is-hidden");
+    user.checkUserFB(result.user.uid);
+    });
+});
+
+$("#logout").click(() => {
+    console.log("main.logout clicked");
+    db.logOut();
+    $("#login").removeClass("is-hidden");
+    $("#logout").addClass("is-hidden");
+});
+

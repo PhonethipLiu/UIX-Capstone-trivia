@@ -1,6 +1,5 @@
 {
-    "response_code": 0,
-    "results": [
+    "trivia_music": [
         {
             "category": "Entertainment: Music",
             "type": "multiple",
