@@ -1,5 +1,7 @@
 "use strict";
 
+console.log("db-interaction working");
+
 let $ = require('jquery'),
     firebase = require("./fb-config"),
     provider = new firebase.auth.GoogleAuthProvider();
@@ -11,10 +13,12 @@ let $ = require('jquery'),
 // GET USER!!!! 
 function getFBDetails(user){
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy="uid"&equalTo="${user}"`
+        url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy".indexOn"="uid"&equalTo="${user}"`
     }).done((resolve) => {
+        console.log("getFBDetails:", resolve);
         return resolve;
     }).fail((error) => {
+        console.log("getFBDetails:", error);
         return error;
     });
 }
@@ -77,8 +81,8 @@ function getGame(user) {
     console.log("url", firebase.getFBsettings().databaseURL);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/trivia.json?orderBy="uid"&equalTo="${user}"`
-    }).done((trivia1Data) => {
-        return trivia1Data;
+    }).done((triviaData) => {
+        return triviaData;
     });
 }
 
@@ -110,8 +114,9 @@ function deleteResult(resultId) {
 function getTrivia(gameId) {
     $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/trivia/${gameId}.json`,
-    }).done((trivia1Data) => {
-        return trivia1Data;
+    }).done((triviaData) => {
+        console.log("trivia json data:", triviaData);
+        return triviaData;
     }).fail((error) => {
         return error;
     });

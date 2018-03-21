@@ -14,8 +14,8 @@ let $ = require('jquery');
 //         </div>`);
 
 //     $(".quiz-display").html(makeGameQuestions);
-//     for(let question in game){
-//         let currentGame = game[question],
+//     for(let q in game){
+//         let currentGame = game[q],
 //             gametype = $("<li>", {class: "game_title"}),
 //             question = $("<h5>", {class: "game_question"}).text(currentGame.title), 
 //             answerOptions = $("</h5>"),

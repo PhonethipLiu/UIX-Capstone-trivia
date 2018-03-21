@@ -16,8 +16,9 @@ $(document).ready(function() {
   $('#myCarousel').on('slid.bs.carousel', function (e) {
     $('#myCarousel').carousel('2'); // Will slide to the slide 2 as soon as the transition to slide 1 is finished
   });
-  
-  $('#login--btn').on("click", function() {
+});
+
+$('#login').click(function() {
     console.log("clicked login");
     db.logInGoogle()
     .then((result) => {
@@ -27,6 +28,11 @@ $(document).ready(function() {
     $("#logout").removeClass("is-hidden");
     user.checkUserFB(result.user.uid);
     });
-  });
+});
 
+$("#logout").click(() => {
+    console.log("main.logout clicked");
+    db.logOut();
+    $("#login").removeClass("is-hidden");
+    $("#logout").addClass("is-hidden");
 });
