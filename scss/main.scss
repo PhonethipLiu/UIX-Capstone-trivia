@@ -66,6 +66,7 @@ section#quiz-area {
 #quiz-display-area li {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    color: rgb(65, 65, 70);
 }
 
 .quiz-display-area {
@@ -76,17 +77,23 @@ section#quiz-area {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+.kicker {
+    color: rgb(231, 158, 0);
+}
 
-input.btn {
-    margin-right: 1rem !important;
-    margin-top: .7rem !important;
-    padding: .2rem 1rem !important;
+label.btn-sm {
+    margin-right: .7rem !important;
+    margin-top: .5rem !important;
+    padding: .4rem 1rem !important;
 }
 
 #game--list div.card {
     margin-bottom: 2rem;
 }
 
+#modal--btn {
+    margin: 1.5rem 0;
+}
 // Footer area styles
 .foot-wrapper {
     background-color: $black-color;
