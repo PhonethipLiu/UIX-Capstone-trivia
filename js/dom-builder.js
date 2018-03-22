@@ -1,39 +1,61 @@
 "use strict";
 
 console.log("dom builder in the haus");
+
 let $ = require('jquery'),
-    firebase = require("./fb-config");
+    firebase = require("./fb-config"),
+    trivia = require("./db-interaction");
 
 // ***** how do I fix this? ******** //
 
 var gameCol = $("#quiz-display-area");
-var populateGameCol = $("#game--questions");
  
+// GET trivia content from firebase
+function getTrivia(){
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/trivia.json`
+    }).done((resolve) => {
+        // console.log("get trivia game:", resolve);
+        return resolve;    
+    }).fail((error) => {
+        console.log("getFBDetails:", error);
+        return error;
+    });
+}
+
+//Call function
+getTrivia().then((resolve) => {
+    console.log("get trivia game:", resolve);
+});
 
 
-// function makeGame(game){
-//     let gameDisplay = 
-//     $(`<label> ${game.id}</label>
-//         <h2>${game.name}</h2>
-//         <ol class= "game" id="game--questions">
-//         </ol>`);
-//     $("#quiz-display-area").html(gameDisplay);
+function makeGame(trivia){
+    var gameDisplay = 
+    $(`<label> ${trivia.game_id}</label>
+        <h2>${trivia.name}</h2>
+        <ol class= "game" id="game--questions">
+        </ol>`);
+        $("#game--questions").append(gameDisplay);
+    console.log("trivia:", gameDisplay );
 
-//     if(game.trivia) {
-//         for (let item in game) {
-//         let currentGame = game[item],
-//         console.log("trivia:", currentGame[i].q1 + currentGame[i].a1 );
-//         populateGameCol.append(
-//             `<li> <h5>${currentGame.q1}</h5>
-//                 <div class="form-check">
-//                     <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1" checked>
-//                     <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
-//                     <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
-//                 </div>
-//             </li>`);
-//         }
-//     }
-// }
+    if(trivia) {
+        for (let i in trivia) {
+        let game = trivia;
+        
+        $("#game--questions").append(
+            `<li> <h5>${game.q1}</h5>
+                <div class="form-check">
+                    <input class="btn btn-outline-secondary btn-sm" type="button-${[i]}" value="${game.a1[i]}" checked>
+                    <input class="btn btn-outline-secondary btn-sm" type="button${[i]}" value="${game.a1[i]}">
+                    <input class="btn btn-outline-secondary btn-sm" type="button${[i]}" value="${game.a1[i]}">
+                    <input class="btn btn-outline-secondary btn-sm" type="button${[i]}" value="${game.a1[i]}">
+                </div>
+            </li>`);
+        }
+    }
+}
+
+$("#quiz-display-area").html(makeGame);
 
 // Results of quiz and correct answers
 // var results = 0;

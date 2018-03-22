@@ -8,19 +8,15 @@ let $ = require('jquery'),
   user = require("./user");
 
 let firebase = require("./fb-config");
-  
 
 // bootstrap carousel
 $(document).ready(function() {
-    // All the JavaScript that depends on jQuery will be written here
-    // $('.carousel').carousel( 
-    //     interval: 5000);
-    
   $('#myCarousel').on('slid.bs.carousel', function (e) {
     $('#myCarousel').carousel('2'); // Will slide to the slide 2 as soon as the transition to slide 1 is finished
   });
 });
 
+// user login
 $('#login').click(function() {
     console.log("clicked login");
     db.logInGoogle()
@@ -39,4 +35,9 @@ $("#logout").click(() => {
     $("#login").removeClass("is-hidden");
     $("#logout").addClass("is-hidden");
 });
+
+// click event listener for images to trigger build game
+
+
+
 
