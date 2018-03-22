@@ -80,11 +80,12 @@ function logOut (){
 // LET THE GAMES BEGIN!!!! 
 // *************************************
 
-function getGame(user) {
+function getGame(index) {
     console.log("url", firebase.getFBsettings().databaseURL);
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/trivia.json?orderBy="uid"&equalTo="${user}"`
+        url: `${firebase.getFBsettings().databaseURL}/trivia${index}.json`
     }).done((triviaData) => {
+        console.log("triviaData :", triviaData);
         return triviaData;
 
     });
@@ -115,12 +116,12 @@ function deleteResult(resultId) {
 }
 
 //Get trivia by gameId
-function getTrivia(gameId) {
+function getTrivia(trivia) {
     $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/trivia/${gameId}.json`,
-    }).done((triviaData) => {
-        console.log("trivia json data:", triviaData);
-        return triviaData;
+        url: `${firebase.getFBsettings().databaseURL}/trivia/${trivia}.json`,
+    }).done((trivia) => {
+        console.log("trivia json data:", trivia);
+        return trivia;
     }).fail((error) => {
         return error;
     });

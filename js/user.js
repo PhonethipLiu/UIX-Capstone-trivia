@@ -1,5 +1,6 @@
 "use strict";
 
+console.log("user js working?");
 
 let firebase = require("./fb-config"),
     db = require("./db-interaction"),
