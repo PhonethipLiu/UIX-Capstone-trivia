@@ -31,7 +31,7 @@ function addUserFB(userObj){
         data: JSON.stringify(userObj),
         dataType: 'json'
     }).done((fbID) => {
-        console.log("addUserFB:", fbID);
+        console.log("db-interaction.js line 34 -- addUserFB:", fbID);
         return fbID;
     });
 }
@@ -43,7 +43,7 @@ function updateUserFB(userObj){
         data: JSON.stringify(userObj),
         dataType: 'json'
     }).done((userID) => {
-        console.log("user object", userObj);
+        console.log("db-interaction.js line 46 --user object", userObj);
         return userID;
     });
 }
@@ -80,52 +80,28 @@ function logOut (){
 // LET THE GAMES BEGIN!!!! 
 // *************************************
 
-function getGame(index) {
-    console.log("url", firebase.getFBsettings().databaseURL);
-    return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/trivia${index}.json`
-    }).done((triviaData) => {
-        console.log("triviaData :", triviaData);
-        return triviaData;
+// function getGame(index) {
+//     console.log("url", firebase.getFBsettings().databaseURL);
+//     return $.ajax({
+//         url: `${firebase.getFBsettings().databaseURL}/trivia/${index}.json`
+//     }).done((triviaData) => {
+//         console.log("triviaData :", triviaData);
+//         return triviaData;
+//     });
+// }
 
-    });
-}
+// //Get trivia game
+// function getTrivia(trivia) {
+//     $.ajax({
+//         url: `${firebase.getFBsettings().databaseURL}/trivia/${trivia}.json`,
+//     }).done((trivia) => {
+//         console.log("bd interaction line 123: trivia json data:", trivia);
+//         return trivia;
+//     }).fail((error) => {
+//         return error;
+//     });
+// }
 
-//add results of quiz to user profile 
-// *** Not sure if this will work ***
-function addResult(resultModalObj) {
-    console.log("addResult", resultModalObj);
-    return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/results.json`,
-        type: 'POST',
-        data: JSON.stringify(resultModalObj),
-        dataType: 'json'
-    }).done((resultId) => {
-        return resultId;
-    });
-}
-
-// delete results of quiz from user profile
-function deleteResult(resultId) {
-    $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/results/${resultId}.json`,
-        method: 'DELETE'
-    }).done((data) => {
-        return data;
-    });
-}
-
-//Get trivia by gameId
-function getTrivia(trivia) {
-    $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/trivia/${trivia}.json`,
-    }).done((trivia) => {
-        console.log("trivia json data:", trivia);
-        return trivia;
-    }).fail((error) => {
-        return error;
-    });
-}
 
 module.exports = {
     getFBDetails,
@@ -134,14 +110,12 @@ module.exports = {
     createUser,
     loginUser,
     logInGoogle,
-    logOut,
-    getGame,
-    deleteResult,
-    addResult,
-    getTrivia
+    logOut
+    // ,
+    // getGame,
+    // getTrivia
 };
 
-// not sure if I should condense Trivia questions and quizzes to one folder called games so that it will streamline functions?
 
 
 

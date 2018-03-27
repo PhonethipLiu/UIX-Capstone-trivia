@@ -52,11 +52,12 @@ function setUserVars(obj){
     });
 }
 
-// function showUser(obj){
-//     let userDetails = getUserObj();
-//     console.log("user.showUser: userDetails:", userDetails);
-// }
+function showUser(obj){
+    let userDetails = getUserObj();
+    console.log("user.showUser: userDetails:", userDetails);
+}
 
+// check for users
 function checkUserFB(uid){
     db.getFBDetails(uid)
     .then((result) => {
@@ -83,12 +84,22 @@ function checkUserFB(uid){
         }
     });
 }
-        
+  
+//call to make user object
 function makeUserObj(uid){
     let userObj = { 
-        uid: uid }; 
+        uid: uid,
+        fbID: name
+    }; 
     return userObj;
 }
+
+
+
+// make results
+
+
+
 
 module.exports = { 
     checkUserFB,

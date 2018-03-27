@@ -1,5 +1,6 @@
 {
     "trivia": [
+       
         {
             "game_id": "trivia-art",
             "name": "Test your art knowledge",
@@ -29,7 +30,7 @@
             "a12": ["4", "1", "3","2"],
             "results": [ "You are an art novice. You appreciate the artwork and not necessarliy the history of the work.", "You are an art enthusiast. You are admirer of art but not an art history buff.", "Bravo, you are an art aficionado! You are an art scholar and appreciate art history."]
         },
-        {
+         {
             "game_id": "trivia-film",
             "name": "Are you a movie buff?",
             "q1": "In which 1973 film does Yul Brynner play a robotic cowboy who malfunctions and goes on a killing spree?",
@@ -53,6 +54,7 @@
             "q10": "Mark Wahlberg played the titular character of which 2008 video-game adaptation?",
             "a10": [ "Max Payne", "Alan Wake", "Hitman", "God Of War"],
             "results": [ "You like watching movies to help you fall asleep.", "You like watching movies but have seen too many movies to remember all the details of the movie.", "You are a movie aficionado! You have spent hours of your life watching movies and indulging in every detail of the film."]
-        }
+         }
+        
     ]
 }
