@@ -46,23 +46,5 @@ function loadGamesToDom(){
 // Envoking function
 // loadGamesToDom();/* may have to move to a different section */
 
-// Send results data to db then reload DOM with updated user results
-$("#${quiz}-save-result").click(function() {
-
-});
-
-
-/****** why doesn't this work? ******/
-// function buildResultsObj() {
-//   let resultsObj = {
-//     uid: user,
-//     game: templates.quiz,
-//     results: $("#game0-save-results").val()
-//   };
-//   console.log("what is buildResultsObj in main.js", buildResultsObj);
-//   return resultsObj;
-// }
-
-// buildResultsObj();
 
 

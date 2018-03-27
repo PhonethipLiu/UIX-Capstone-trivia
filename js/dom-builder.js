@@ -55,7 +55,7 @@ function makeGame(trivia){
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                            <button class="btn btn-primary btn-sm" id="ame0-save-results" id="${quiz.results}">Save results</button>
+                            <button class="btn btn-primary btn-sm" id="quiz-save-result">Save results</button>
                             </div>
                         </div>
                     </div>
@@ -313,6 +313,11 @@ getTrivia().then((resolve) => {
         console.log("DOH! something went wrong");
 });
 
+// Send results data to db then reload DOM with updated user results
+$("#quiz-save-result").click(() => {
+    console.log("hit the modal results save button:");
+    // buildResultObj();
+  });
 // $("#quiz-display-area").html(makeGame);
 
 // Results of quiz and correct answers

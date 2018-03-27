@@ -34,11 +34,6 @@ function setUser(val) {
     currentUser.uid = val;
 }
 
-//GET SAVE GAME RESULTS
-function getUserResults(){
-    return currentUser.results;
-}
-
 function getUserObj(){
     return currentUser;
 }
@@ -93,12 +88,6 @@ function makeUserObj(uid){
     }; 
     return userObj;
 }
-
-
-
-// make results
-
-
 
 
 module.exports = { 
