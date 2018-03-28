@@ -10,7 +10,7 @@ let $ = require('jquery'),
 // ***** Trivia[0] ******** //
 
 var gameCol = $("#quiz-display-area");
-var correctAnswers = 0;
+var gameResult = {};
 
 // GET trivia content from firebase
 function getTrivia(game){
@@ -60,8 +60,8 @@ function makeGame(trivia){
                         </div>
                     </div>
                 </div>`);
-        console.log(" line 63 of dom-builder.js -- makeGame trivia data quiz.name: ", quiz.name);
-        console.log("line 64 of dom-builder.js trivia firebase content:", quiz);
+        // console.log(" line 63 of dom-builder.js -- makeGame trivia data quiz.name: ", quiz.name);
+        // console.log("line 64 of dom-builder.js trivia firebase content:", quiz);
             
             let Q1 =`<li> <h5>${quiz.q1}</h5>
                     <div class="btn-group-toggle" data-toggle="buttons">
@@ -313,11 +313,9 @@ getTrivia().then((resolve) => {
         console.log("DOH! something went wrong");
 });
 
-// Send results data to db then reload DOM with updated user results
-$("#quiz-save-result").click(() => {
-    console.log("hit the modal results save button:");
+
     // buildResultObj();
-  });
+//   });
 // $("#quiz-display-area").html(makeGame);
 
 // Results of quiz and correct answers

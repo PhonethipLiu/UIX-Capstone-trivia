@@ -24,6 +24,7 @@ function getFBDetails(user){
     });
 }
 
+
 function addUserFB(userObj){
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/user.json`,
@@ -31,7 +32,7 @@ function addUserFB(userObj){
         data: JSON.stringify(userObj),
         dataType: 'json'
     }).done((fbID) => {
-        console.log("db-interaction.js line 34 -- addUserFB:", fbID);
+        // console.log("db-interaction.js line 34 -- addUserFB:", fbID);  /* this shows user firebaseID */
         return fbID;
     });
 }
@@ -80,24 +81,29 @@ function logOut (){
 // LET THE GAMES BEGIN!!!! 
 // *************************************
 
-// function getGame(index) {
-//     console.log("url", firebase.getFBsettings().databaseURL);
+// GET USER!!!! 
+// function getFBDetails(user){
 //     return $.ajax({
-//         url: `${firebase.getFBsettings().databaseURL}/trivia/${index}.json`
-//     }).done((triviaData) => {
-//         console.log("triviaData :", triviaData);
-//         return triviaData;
+//         url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy="uid"&equalTo="${user}"`
+//     }).done((resolve) => {
+//         console.log("getFBDetails:", resolve);
+//         return resolve;
+//     }).fail((error) => {
+//         console.log("getFBDetails:", error);
+//         return error;
 //     });
 // }
 
+
 // //Get trivia game
-// function getTrivia(trivia) {
+// function getFBResults(uid) {
 //     $.ajax({
-//         url: `${firebase.getFBsettings().databaseURL}/trivia/${trivia}.json`,
-//     }).done((trivia) => {
-//         console.log("bd interaction line 123: trivia json data:", trivia);
-//         return trivia;
+//         url: `${firebase.getFBsettings().databaseURL}/results.json?orderBy="uid"&equalTo="${uid}"`,
+//     }).done((resolve) => {
+//         console.log("bd interaction line 123: trivia json data:", resolve);
+//         return resolve;
 //     }).fail((error) => {
+//         console.log("getFBResults(uid)", error);
 //         return error;
 //     });
 // }

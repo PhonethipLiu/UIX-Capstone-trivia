@@ -15,10 +15,10 @@ let firebase = require("./fb-config"),
 
 //listens for changed state
 firebase.auth().onAuthStateChanged((user) => {
-    console.log("onAuthStateChanged", user);
+    console.log("USERS.js line 18: onAuthStateChanged", user);
     if (user) {
         currentUser.uid = user.uid;
-        console.log("current user Logged in?", currentUser.uid);
+        console.log("USERS.js line 21:current user Logged in?", currentUser.uid);
     } else {
         currentUser.uid = null;
         currentUser.fbID = null;
@@ -39,7 +39,7 @@ function getUserObj(){
 }
 
 function setUserVars(obj){
-    console.log("user.setUserVars: obj", obj);
+    console.log("USERS.js line 42: user.setUserVars: obj", obj);
     return new Promise((resolve, reject) => {
         currentUser.fbId = obj.fbID ? obj.fbID : currentUser.fbID;
         currentUser.uid = obj.uid ? obj.uid : currentUser.uid;
