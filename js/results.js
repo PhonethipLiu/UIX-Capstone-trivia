@@ -9,26 +9,21 @@ let $ = require('jquery'),
     user = require("./user");
 
 let results = {
-    uid : user.getUser(),
-    game_name : "Testing game name",
-    game_result : "test game results"
+    user : user.getUserObj(),
+    game_name : null,
+    game_result : null
     };
+
     //POST results of quiz to user profile 
-// *** Not sure if this will work ***
-
-// user.getFBDetails().then((resolve) => {
-//     console.log("results.js line 14: resolve for getFBDetails", resolve);
-// });
-
 function getResult(uid){
     console.log("line 125 of results.js: what is user uid in results?", uid);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results.json?orderBy="uid"&equalTo="${uid}"`
     }).done((resultsUid) => {
-        console.log("Results.js line 28: getResults:",resultsUid);
+        console.log("Results.js line 23: getResults:",resultsUid);
         return resultsUid;
     }).fail((error) => {
-        console.log("Results.js line 31s: getFBResultsDetails:", error);
+        console.log("Results.js line 26: getFBResultsDetails:", error);
         return error;
     });
 }
@@ -41,7 +36,7 @@ function addResult(results) {
         data: JSON.stringify(results),
         dataType: 'json'
     }).done((resultsId) => {
-        console.log("results.js line 45: what is addResult(resultObj)?", resultsId);
+        console.log("results.js line 39: what is addResult(resultObj)?", resultsId);
         return resultsId;
     });
 }
@@ -58,7 +53,7 @@ function setResult(val) {
   
 // delete results of quiz from user profile
 function deleteResult(resultsId) {
-    console.log("what is deleteUserResult in line 59 of results.js?", resultsId);
+    console.log("what is deleteUserResult in line 56 of results.js?", resultsId);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results/${resultsId}.json`,
         method: 'DELETE'
@@ -67,7 +62,7 @@ function deleteResult(resultsId) {
     });
 }
 
-function editResult(result) {
+function editResult(results) {
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results.json`,
         type: 'GET',
@@ -75,7 +70,7 @@ function editResult(result) {
         // data: JSON.stringify(result),
         dataType: 'json'
     }).done((userID) => {
-        console.log("results.js line 66: editResult = ?:", editResult);
+        console.log("results.js line 73: editResult = ?:", editResult);
         return userID;
     });
 }
@@ -89,92 +84,32 @@ function setResult(obj){
     });
 }
 
-// function showUser(obj){
-//     let userDetails = getUserObj();
-//     console.log("user.showUser: userDetails:", userDetails);
-// }
-
-  /****** why doesn't this work? ******/
-//   function buildResultObj() {
-//     let resultObj = {
-//       uid: user.currentUser.uid,
-//       game: dom.quiz,
-//       results: $("#quiz-save-result").val()
-//     };
-//     console.log("what is buildResultObj in line 141 of results.js", resultObj);
-//     return resultObj;
-//   }
-
-//   //call to make user object
-function makeResultObj(resultsObj){
-    let resultObj = { 
-        game: "",
-        game_result: ""
-    }; 
-    console.log("what is makeResultObj(uid) in line 139 of results.js", resultObj);
-    return resultObj;
+//   //call to make object
+function makeResultObj(results){
+    results = {
+        user : user.getUserObj(),
+        game_name : null,
+        game_result : null
+        };    
+    console.log("what is makeResultObj(uid) in line 94 of results.js", results);
+    return results;
 }
 
 //call the function to add results node to firebase and then return all the result object
-addResult(results).then((resultsObj) => {
-    console.log("results.js line 113: what is buildResultObj in results.js", resultsObj);
-//     makeResultObj(resultsObj);
+addResult(results).then((resolve) => {
+    console.log("results.js line 100: what is buildResultObj in results.js",resolve);
+    makeResultObj();
+    return resolve;
     },
     (reject) => {
-    console.log("results.js line 117 :DOH! something went wrong with the add UserResult()");
+    console.log("results.js line 104 :DOH! something went wrong with the add UserResult()");
 });
 
-// check for user results
-// function checkUserFB(uid){
-
-//     .then((results) => {
-//         let data = Object.values(results);
-//         console.log("user: any data?", data.length);
-//         if (data.length === 0){
-//             console.log("need to add this user to FB", data);
-//             db.addResult(makeResultObj())
-//             .then((results) => {
-//                 console.log("user: user added", uid, results.name);
-//                 let resultsObj = {
-//                     fbID: results.name,
-//                     uid: uid,
-//                 };
-//                 return results ;
-//             }).then((results ) => {
-//                 return setResult(results);
-//             });
-//         } else {
-//             console.log("user: already a user", data);
-//             var key = Object.keys(results);
-//             data[0].fbID = key[0];
-//             setResult(data[0]);
-//          }
-//     });
-// }
-
-module.exports = {
+module.exports = {   
     addResult,
     deleteResult,
     editResult,
     getResult,
-    setResult
+    setResult,
+    makeResultObj
 };
-
-// post game results counter to user uid?
-// function correctAnswer (postRef, uid) {
-//     postRef.transaction(function(post) {
-//         if (post) {
-//             if (post.answer && post.answer[uid]){
-//                 post.answerCount-- ;
-//                 post.answer[uid] = null;
-//             } else {
-//                 post.answerCount++;
-//                 if (!post.answer) {
-//                     post.answer = {};
-//                 }
-//                 post.answer[uid] = true;
-//             }
-//         }
-//         return post;
-//     });
-// }

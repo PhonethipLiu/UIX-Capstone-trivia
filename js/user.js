@@ -5,11 +5,9 @@ console.log("user js working?");
 let firebase = require("./fb-config"),
     db = require("./db-interaction"),
     currentUser = {
-        uid: null,
-        fbID: null
+        uid: null
     };
     
-
  // call logout when page loads to avoid currentUser.uid   
 // db.logOut();
 
@@ -21,27 +19,27 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log("USERS.js line 21:current user Logged in?", currentUser.uid);
     } else {
         currentUser.uid = null;
-        currentUser.fbID = null;
         console.log("curent user NOT logged in:", currentUser);
     }   
 });
 
-function getUser() {
-    return currentUser.uid;
-}
-
 function setUser(val) {
+    console.log("users.js line 30: what is the getUser()", currentUser.uid);
     currentUser.uid = val;
 }
 
+function getUser() {
+    return currentUser.uid;
+}
 function getUserObj(){
+    console.log("users.js line 38: what is the getUser()", currentUser);
     return currentUser;
 }
 
 function setUserVars(obj){
     console.log("USERS.js line 42: user.setUserVars: obj", obj);
     return new Promise((resolve, reject) => {
-        currentUser.fbId = obj.fbID ? obj.fbID : currentUser.fbID;
+        // currentUser.fbId = obj.fbId ? obj.fbId : currentUser.fbId;
         currentUser.uid = obj.uid ? obj.uid : currentUser.uid;
         resolve(currentUser);
     });
@@ -64,7 +62,7 @@ function checkUserFB(uid){
             .then((result) => {
                 console.log("user: user added", uid, result.name);
                 let tmpUser = {
-                    fbID: result.name,
+                    fbId: result.name,
                     uid: uid
                 };
                 return tmpUser;
@@ -74,7 +72,7 @@ function checkUserFB(uid){
         } else {
             console.log("user: already a user", data);
             var key = Object.keys(result);
-            data[0].fbID = key[0];
+            data[0].fbId = key[0];
             setUserVars(data[0]);
         }
     });
@@ -84,11 +82,10 @@ function checkUserFB(uid){
 function makeUserObj(uid){
     let userObj = { 
         uid: uid,
-        fbID: name
+        // fbID: name
     }; 
     return userObj;
 }
-
 
 module.exports = { 
     checkUserFB,
@@ -96,4 +93,5 @@ module.exports = {
     setUser,
     setUserVars,
     getUserObj,
+    makeUserObj
     };

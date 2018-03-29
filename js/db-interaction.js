@@ -81,33 +81,6 @@ function logOut (){
 // LET THE GAMES BEGIN!!!! 
 // *************************************
 
-// GET USER!!!! 
-// function getFBDetails(user){
-//     return $.ajax({
-//         url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy="uid"&equalTo="${user}"`
-//     }).done((resolve) => {
-//         console.log("getFBDetails:", resolve);
-//         return resolve;
-//     }).fail((error) => {
-//         console.log("getFBDetails:", error);
-//         return error;
-//     });
-// }
-
-
-// //Get trivia game
-// function getFBResults(uid) {
-//     $.ajax({
-//         url: `${firebase.getFBsettings().databaseURL}/results.json?orderBy="uid"&equalTo="${uid}"`,
-//     }).done((resolve) => {
-//         console.log("bd interaction line 123: trivia json data:", resolve);
-//         return resolve;
-//     }).fail((error) => {
-//         console.log("getFBResults(uid)", error);
-//         return error;
-//     });
-// }
-
 
 module.exports = {
     getFBDetails,
