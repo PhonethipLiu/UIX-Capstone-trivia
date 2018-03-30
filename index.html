@@ -8,13 +8,7 @@
     
     <!-- Google fonts -->
 
-
-
-
-   
-
     <!-- Bootstrap dev styles -->
-    <link rel="stylesheet" type="text/css" media="screen" href="/lib/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="/lib/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     
     <!-- Local CSS -->
@@ -35,9 +29,10 @@
                     <a class="nav-link" href="#">Stats</a>
                 </li>
                 <li class="nav-item">
-                    <a id="login" class="nav-link " href="#">Login</a>
+                        <img src="imgs/icon-login.png" width="30" height="30" >
+                        <a id="login" class="nav-link " href="#">Login</a>
                     <a id="logout" class="nav-link is-hidden" href="#">Logout</a>
-                    <!-- <input class="btn btn-outline-secondary btn-sm" id="login--btn"type="button" value="login" > -->
+                    <!-- <input class="btn btn-outline-secondary btn-sm" id="login-btn"type="button" value="login" > -->
                 </li>
             </ul>
         </nav>
@@ -75,7 +70,7 @@
                     <div class="carousel-item active">
                         <a href="#quiz-display-area"> <img class="d-block w-100" src="imgs/image1_Test.png" alt="First slide"> </a>
                     </div>
-                    <div class="carousel-item">
+                    <div class=" carousel-item">
                             <a href="#quiz-display-area"> <img class="d-block w-100" src="imgs/Asian_test.png" alt="Second slide"> </a>
                     </div>
                     <div class="carousel-item">
@@ -101,106 +96,10 @@
         
          <div class="container">  
             <div class="row">      
-                <div class="col-sm-9" id="quiz-display-area">
+                <div class="col-sm-8" id="quiz-display-area">
+                </div> <!-- ** close ** col-9 -->
 
-                    <!-- <label> Quiz</label>
-                    <h2>What's your spirit animal?</h2>
-                    <ol> -->
-                       <!-- <li>  Q1  -->
-                            <!-- <h5>Will you be the one?</h5>
-                            
-                                <div class="form-check">
-                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1" checked>
-                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
-                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
-                                </div>
-                            </li>
-
-                        <li> 
-                            <h5>Will you be the one?</h5>
-                            <div class="form-check">
-                                <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1">
-                                <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
-                                <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
-                             </div>
-                            </li> -->
-
-                    <!--    <li>  Q3  -->
-                        <!-- <h5>Will you be the one?</h5>
-                        <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    Default checkbox
-                                </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1">
-                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
-                                    <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
-                                </div>
-                            </li> -->
-
-                           <!--  <li> Q4  -->
-                            <!-- <h5>Will you be the one to be on top?</h5> -->
-                            <!-- <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Default checkbox
-                                    </label>
-                                    </div> -->
-                                    <!-- <div class="form-check">
-                                        <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 1">
-                                        <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 2">
-                                        <input class="btn btn-outline-secondary btn-sm" type="button" value="Answer 3">
-                                    </div> -->
-                                    <!-- <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
-                                    <label class="form-check-label" for="defaultCheck2">
-                                        Disabled checkbox
-                                    </label>
-                                    </div> -->
-                                <!-- </li> -->
-                    <!-- </ol> -->
-
-                    <!-- Button trigger modal -->
-                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Get your result
-                    </button> --> 
-
-                    <!-- Modal -->
-                    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Quiz Result:  Business persona's spirit animal...</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>  -->
-
-                            <!-- start modal pop-up results-->
-                            <!-- <div class="modal-body">  -->
-                                <!-- Media object modal pop-up results-->
-                                 <!-- <div class="media">
-                                    <img class="mr-3" width="60" height="60" src="imgs/test-rat.svg" alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">You're a Rat!</h5>
-                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                                    </div>
-                                </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary btn-sm">Save results</button>
-                                </div>
-                            </div>
-                        </div>
-                   </div>  -->
-                   <!--  end modal pop-up results -->
-
-                    </div> <!-- ** close ** col-8 -->
-
-                <div class="col-sm-3" id="game--list">
+                <div class="col-sm-4" id="game--list">
                     <h4>More Games</h4>
                     <label class="kicker"> Trivia</label>
                     <div class="card"> <!-- image card-1 for quiz -->
@@ -226,7 +125,7 @@
                             <a href="#" class="btn btn-secondary btn-sm">Play</a>
                         </div>
                     </div> <!-- ** close ** image card-3 for quiz -->
-                </div> <!-- ** close ** col 4 -->
+                </div> <!-- ** close ** col 3 -->
 
             </div> <!-- ** close ** row -->
         </div>  <!-- ** close ** container -->

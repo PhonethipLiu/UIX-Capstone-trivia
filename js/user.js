@@ -5,58 +5,52 @@ console.log("user js working?");
 let firebase = require("./fb-config"),
     db = require("./db-interaction"),
     currentUser = {
-        uid: null,
-        fbID: null
+        uid: null
     };
     
-
  // call logout when page loads to avoid currentUser.uid   
 // db.logOut();
 
 //listens for changed state
 firebase.auth().onAuthStateChanged((user) => {
-    console.log("onAuthStateChanged", user);
+    console.log("USERS.js line 18: onAuthStateChanged", user);
     if (user) {
         currentUser.uid = user.uid;
-        console.log("current user Logged in?", currentUser.uid);
+        console.log("USERS.js line 21:current user Logged in?", currentUser.uid);
     } else {
         currentUser.uid = null;
-        currentUser.fbID = null;
         console.log("curent user NOT logged in:", currentUser);
     }   
 });
 
-function getUser() {
-    return currentUser.uid;
-}
-
 function setUser(val) {
+    console.log("users.js line 30: what is the getUser()", currentUser.uid);
     currentUser.uid = val;
 }
 
-//GET SAVE GAME RESULTS
-function getUserResults(){
-    return currentUser.results;
+function getUser() {
+    console.log("users.js line 32: what is the getUser()", currentUser);
+    return currentUser.uid;
 }
-
 function getUserObj(){
     return currentUser;
 }
 
 function setUserVars(obj){
-    console.log("user.setUserVars: obj", obj);
+    console.log("USERS.js line 42: user.setUserVars: obj", obj);
     return new Promise((resolve, reject) => {
-        currentUser.fbId = obj.fbID ? obj.fbID : currentUser.fbID;
+        // currentUser.fbId = obj.fbId ? obj.fbId : currentUser.fbId;
         currentUser.uid = obj.uid ? obj.uid : currentUser.uid;
         resolve(currentUser);
     });
 }
 
-// function showUser(obj){
-//     let userDetails = getUserObj();
-//     console.log("user.showUser: userDetails:", userDetails);
-// }
+function showUser(obj){
+    let userDetails = getUserObj();
+    console.log("user.showUser: userDetails:", userDetails);
+}
 
+// check for users
 function checkUserFB(uid){
     db.getFBDetails(uid)
     .then((result) => {
@@ -68,7 +62,7 @@ function checkUserFB(uid){
             .then((result) => {
                 console.log("user: user added", uid, result.name);
                 let tmpUser = {
-                    fbID: result.name,
+                    fbId: result.name,
                     uid: uid
                 };
                 return tmpUser;
@@ -78,15 +72,18 @@ function checkUserFB(uid){
         } else {
             console.log("user: already a user", data);
             var key = Object.keys(result);
-            data[0].fbID = key[0];
+            data[0].fbId = key[0];
             setUserVars(data[0]);
         }
     });
 }
-        
+  
+//call to make user object
 function makeUserObj(uid){
     let userObj = { 
-        uid: uid }; 
+        uid: uid,
+        // fbID: name
+    }; 
     return userObj;
 }
 
@@ -96,4 +93,5 @@ module.exports = {
     setUser,
     setUserVars,
     getUserObj,
+    makeUserObj
     };
