@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("Firebase config working");
+// console.log("Firebase config working");
 
 let firebase = require("firebase/app"),
     fb = require("./fb-key"),

@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("Main.js is working");
+// console.log("Main.js is working");
 
 let $ = require('jquery'),
   db = require("./db-interaction"),
@@ -17,7 +17,7 @@ $(document).ready(function() {
   });
   // Send results data to db then reload DOM with updated user results
   $("#quiz-save-result").click(function() {
-  console.log("hit the modal results save button:", $("#quiz-save-result"));
+  console.log("hit the modal results save button:");
   });
 });
 

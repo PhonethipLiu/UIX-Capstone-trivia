@@ -29,10 +29,10 @@ function setUser(val) {
 }
 
 function getUser() {
+    console.log("users.js line 32: what is the getUser()", currentUser);
     return currentUser.uid;
 }
 function getUserObj(){
-    console.log("users.js line 38: what is the getUser()", currentUser);
     return currentUser;
 }
 

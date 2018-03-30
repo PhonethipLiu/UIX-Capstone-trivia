@@ -1,14 +1,13 @@
 "use strict";
 
-console.log("dom builder in the haus");
+// console.log("dom builder in the haus");
 
 let $ = require('jquery'),
     firebase = require("./fb-config"),
-    trivia, trivia1, trivia2 = require("./db-interaction");
+    results = require("./results"),
+    db = require("./db-interaction");
 
- 
 // ***** Trivia[0] ******** //
-
 var gameCol = $("#quiz-display-area");
 var gameResult = {};
 
@@ -17,18 +16,16 @@ function getTrivia(game){
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/trivia.json`
     }).done((game) => {
-        console.log("line 20 of dom-builder.js - get trivia game:", game);
+        console.log("line 28 of dom-builder.js - get trivia game:", game);
         return game;    
     }).fail((error) => {
-        console.log("line 23 of dom-builder.js - getFBDetails:", error);
+        console.log("Error! Check getTrivia function line 21 of dom-builder", error);
         return error;
-    });
+    }); 
 }
 
-
 function makeGame(trivia){
-    console.log("line 30 of dom-builder.js get function makeGame(game)", trivia);
-    
+    // console.log("line 30 of dom-builder.js get function makeGame(game)", trivia);
     if (trivia) {
         var quiz = trivia[0];
         $("#quiz-display-area").append(
@@ -162,6 +159,24 @@ function makeGame(trivia){
         $('#game--questions').append(Q1 + Q2 + Q3 + Q4 + Q5 + Q6 + Q7 + Q8 + Q9 + Q10 + Q11 + Q12);
     }
 }
+
+//Call function
+getTrivia().then((resolve) => {
+    console.log("line 164 of dom-builder.js make call for trivia resolve", resolve);
+    makeGame(resolve);
+    },
+    (reject) => {
+        console.log("DOH! something went wrong");
+});
+
+// buildResultObj();
+//   });
+// $("#quiz-display-area").html(makeGame);
+
+// Results of quiz and correct answers
+// var results = 0;
+
+module.exports = getTrivia();
 
 //trivia game 2
 
@@ -301,24 +316,3 @@ function makeGame(trivia){
 //         $('#game--questions').append(Q1 + Q2 + Q3 + Q4 + Q5 + Q6 + Q7 + Q8 + Q9 + Q10 + Q11 + Q12);
 //     }
 // }
-
-
-//Call function
-
-getTrivia().then((resolve) => {
-    console.log("line 33 of dom-builder.js make call for trivia resolve", resolve);
-    makeGame(resolve);
-    },
-    (reject) => {
-        console.log("DOH! something went wrong");
-});
-
-
-    // buildResultObj();
-//   });
-// $("#quiz-display-area").html(makeGame);
-
-// Results of quiz and correct answers
-// var results = 0;
-
-module.exports = getTrivia();

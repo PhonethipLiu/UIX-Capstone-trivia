@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("db-interaction working");
+// console.log("db-interaction working");
 
 let $ = require('jquery'),
     firebase = require("./fb-config"),
@@ -16,7 +16,7 @@ function getFBDetails(user){
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy="uid"&equalTo="${user}"`
     }).done((resolve) => {
-        console.log("getFBDetails:", resolve);
+        console.log("db: line 19: getFBDetails:", resolve);
         return resolve;
     }).fail((error) => {
         console.log("getFBDetails:", error);
@@ -24,28 +24,27 @@ function getFBDetails(user){
     });
 }
 
-
 function addUserFB(userObj){
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/user.json`,
         type: 'POST',
         data: JSON.stringify(userObj),
         dataType: 'json'
-    }).done((fbID) => {
+    }).done((fbId) => {
         // console.log("db-interaction.js line 34 -- addUserFB:", fbID);  /* this shows user firebaseID */
-        return fbID;
+        return fbId;
     });
 }
 
 function updateUserFB(userObj){
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/user/${userObj.fbID}.json`,
+        url: `${firebase.getFBsettings().databaseURL}/user/${userObj.fbId}.json`,
         type: 'PUT',
         data: JSON.stringify(userObj),
         dataType: 'json'
-    }).done((userID) => {
+    }).done((userId) => {
         console.log("db-interaction.js line 46 --user object", userObj);
-        return userID;
+        return userId;
     });
 }
 
@@ -76,17 +75,70 @@ function logOut (){
     return firebase.auth().signOut();
 }
 
-
 // *************************************
-// LET THE GAMES BEGIN!!!! 
+// GET RESULTS
 // *************************************
 
+//POST results of quiz to user profile 
+function getResultDetails(uid){
+    console.log("db.js: line 84 what is user uid in results?",uid);
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/results.json?orderBy="uid"&equalTo="${uid}"`
+    }).done((resolve) => {
+        console.log("db.js:Results.js line 35: getResultDetails",resolve);
+        return resolve;
+    }).fail((error) => {
+        console.log("db.js:Results.js line 38: getFBResultsDetails:", error);
+        return error;
+    });
+}
+
+function addResult(results) {
+    console.log("db.js: Line 97 results addUserResult", results);
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/results.json`,
+        type: 'POST',
+        data: JSON.stringify(results),
+        dataType: 'json'
+    }).done((results) => {
+        console.log("results.js line 40x: what is addResult(results)?", results);
+        return results;
+    });
+}
+  
+// delete results of quiz from user profile
+function deleteResult(resultsId) {
+    console.log("db.js: line 111, what is deleteUserResult?", resultsId);
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/results/${resultsId}.json`,
+        method: 'DELETE'
+    }).done((data) => {
+        return data;
+    });
+}
+
+function editResult(results) {
+    return $.ajax({
+        url: `${firebase.getFBsettings().databaseURL}/results.json`,
+        // type: 'GET',
+        type: 'PUT',
+        data: JSON.stringify(results),
+        dataType: 'json'
+    }).done((userId) => {
+        console.log("db.js:line 128, what is editResult?:", editResult);
+        return userId;
+    });
+}
 
 module.exports = {
     getFBDetails,
     addUserFB,
     updateUserFB,
     createUser,
+    getResultDetails,   
+    addResult,
+    deleteResult,
+    editResult,
     loginUser,
     logInGoogle,
     logOut
