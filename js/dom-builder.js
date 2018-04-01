@@ -29,7 +29,7 @@ function makeGame(trivia){
     if (trivia) {
         var quiz = trivia[0];
         $("#quiz-display-area").append(
-            `<label class="kicker"> ${quiz.game_id}</label>
+            `<label class="kicker"> ${quiz.gameId}</label>
              <h2>${quiz.name}</h2>  
              <ol class= "game" id="game--questions"> </ol>
              <button class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal" id="modal--btn"> Get your result </button> 
@@ -199,7 +199,7 @@ module.exports = {
 //     if (trivia1) {
 //         var quiz2 = trivia[1];
 //         $("#quiz-display-area").append(
-//             `<label class="kicker"> ${quiz2.game_id}</label>
+//             `<label class="kicker"> ${quiz2.gameId}</label>
 //              <h2>${quiz2.name}</h2>  
 //              <ol class= "game" id="game--questions"> </ol>
 //              <button class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal" id="modal--btn"> Get your result </button> 

@@ -39,8 +39,8 @@ $(document).ready(function() {
     $("#logout").addClass("is-hidden");
   });
 
-  $("#art--quiz").click((trivia)=> {
-    dom.makeGame(trivia);
+  $("#art--quiz").on((e) => {
+    dom.makeGame();
     });
   // envoking the function to run event listener for modal results 
   $("#quiz-save-result").click(function() {
