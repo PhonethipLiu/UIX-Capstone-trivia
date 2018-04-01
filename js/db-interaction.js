@@ -16,7 +16,7 @@ function getFBDetails(user){
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/user.json?orderBy="uid"&equalTo="${user}"`
     }).done((resolve) => {
-        console.log("db: line 19: getFBDetails:", resolve);
+        // console.log("db: line 19: getFBDetails:", resolve);
         return resolve;
     }).fail((error) => {
         console.log("getFBDetails:", error);
@@ -48,7 +48,7 @@ function updateUserFB(userObj){
     });
 }
 
-//return promise
+//create user with email login return promise
 function createUser(userObj){
     return firebase.auth().createUserWithEmailAndPassword(userObj.email, userObj.password)
     .catch(function(error){
@@ -67,6 +67,7 @@ function loginUser(userObj){
     });
 }
 
+// login with Gmail account info
 function logInGoogle() {
     return firebase.auth().signInWithPopup(provider); 
 }
@@ -134,15 +135,14 @@ module.exports = {
     getFBDetails,
     addUserFB,
     updateUserFB,
-    createUser,
+    // createUser, 
+    // loginUser,
+    logInGoogle,
+    logOut,
     getResultDetails,   
     addResult,
     deleteResult,
-    editResult,
-    loginUser,
-    logInGoogle,
-    logOut
-    // ,
+    editResult
     // getGame,
     // getTrivia
 };

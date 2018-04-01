@@ -1,6 +1,9 @@
 $font-head:  'Montserrat', sans-serif;
 $font-body:  'Lato', sans-serif;
 $black-color: rgb(2, 2, 2);
+$red-color: rgb(153, 9, 7);
+$orange-color: rgb(245, 154, 19);
+$gray-color: rgb(238, 237, 231);
 
 
 //Main body styles
@@ -8,6 +11,12 @@ html,
 body {
   margin:  0;
   padding: 0;
+}
+
+h4 {
+    color: $orange-color;
+    text-transform: uppercase; 
+    font-size: 1.3rem; 
 }
 
 // Navigation styles
@@ -24,22 +33,10 @@ nav.navbar {
 // Nav bar background
 .bg-dark {
     background-color:rgba(3, 3, 3, 1) !important;
-    box-shadow: 0px 5px 20px 5px rgba(27, 27, 27, 0.3);  
+    box-shadow: 0px 5px 20px 10px rgba(27, 27, 27, 0.5);  
 }
-
-// section.user-wrapper {
-//     background-color: rgb(141, 139, 139);
-//     color: snow;
-//     padding: 1rem 2rem;
-//     margin-top: 5rem !important;
-//     font-style: .8rem;
-// }
 
 // Carousel area styles
-img.d-block.w-100 { // why doesn't this work?
-   max-height: auto;
-   
-}
 
 .carousel-wrapper{
     overflow: hidden;
@@ -50,17 +47,29 @@ img.d-block.w-100 { // why doesn't this work?
     object-fit: contain;
 }
 
-// .carousel.slide {
-//     // max-width: 80%;
-//     // box-shadow: 3px 5px 30px 10px rgba(99, 98, 99, 0.297); 
-//     // position: relative;
-//     margin-bottom: 2rem;
-  
-// }
+// EVENT LISTENERS
+.is-hidden {
+    display: none;
+}
 
 // Main content area
-section#quiz-area {
-    margin: 2em 2em ;
+.container {
+    margin: 0 !important;
+}
+
+.left-col {
+    margin: 0rem !important;
+    padding: 0rem !important;
+}
+
+.right-col {
+    padding: 0rem 2rem !important;
+    background-color: rgba(2, 2, 2, 0.781);
+    box-shadow: 0px 5px 20px 5px rgba(27, 27, 27, 0.8) inset;  
+}
+
+#quiz-display-area {
+    margin: 5rem 5rem ;
 }
 
 #quiz-display-area li {
@@ -69,14 +78,22 @@ section#quiz-area {
     color: rgb(65, 65, 70);
 }
 
-.quiz-display-area {
-    margin: 3rem 2rem;
+// SIDEBAR
+#user--profile {
+    padding: 1rem 0rem;
+    margin-top: 6rem;
+    font-style: .8rem;
+}
+
+.card-header{
+    height: 3rem;
 }
 
 #game--list{
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
+
 .kicker {
     color: rgb(231, 158, 0);
 }
@@ -94,6 +111,7 @@ label.btn-sm {
 #modal--btn {
     margin: 1.5rem 0;
 }
+
 // Footer area styles
 .foot-wrapper {
     background-color: $black-color;

@@ -9,7 +9,7 @@ let $ = require('jquery'),
 
 // ***** Trivia[0] ******** //
 var gameCol = $("#quiz-display-area");
-var gameResult = {};
+var gameResult= {};
 
 // GET trivia content from firebase
 function getTrivia(game){
@@ -161,22 +161,35 @@ function makeGame(trivia){
 }
 
 //Call function
+// Build Result object with gameName & gameResult to be added to FB along with uid and displayName
+// POST User Id and displayName successfully to FB
 getTrivia().then((resolve) => {
-    console.log("line 164 of dom-builder.js make call for trivia resolve", resolve);
+    let data = Object.values(resolve);
+    console.log("line 164 of dom-builder.js make call for trivia resolve", data[0]);
+    let saveResult = {
+        gameName : data[0].name,
+        gameResult : data[0].results[2]
+    };
+    results.makeResultObj(saveResult.gameName, saveResult.gameResult);
+    console.log("line 168 of dom-builder.js : results.make call for trivia resolve data", saveResult.gameName, saveResult.gameResult);
     makeGame(resolve);
     },
     (reject) => {
         console.log("DOH! something went wrong");
 });
 
+function loadGameResult(){
+    console.log("DOM.js line 182: loadGameResult");
+    
+  }
 // buildResultObj();
 //   });
 // $("#quiz-display-area").html(makeGame);
-
-// Results of quiz and correct answers
-// var results = 0;
-
-module.exports = getTrivia();
+ 
+module.exports = {
+    getTrivia,
+    makeGame
+};
 
 //trivia game 2
 
@@ -316,3 +329,4 @@ module.exports = getTrivia();
 //         $('#game--questions').append(Q1 + Q2 + Q3 + Q4 + Q5 + Q6 + Q7 + Q8 + Q9 + Q10 + Q11 + Q12);
 //     }
 // }
+
