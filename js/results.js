@@ -8,7 +8,8 @@ let $ = require('jquery'),
     dom = require("./dom-builder"),
     user = require("./user");
 
-let uid = user.getUserObj();
+let uid = user.getUser();
+console.log("RESULTS.js line 12: what is user uid in results?",uid);
 let results = {
     uid: uid,
     gameName : null,
@@ -36,7 +37,7 @@ function addResult(results) {
         data: JSON.stringify(results),
         dataType: 'json'
     }).done((resultsFBid) => {
-        console.log("results.js line 39: what is results?", results); /* This is the updated data for results with saved game results and game name */
+        console.log("results.js line 39: what is results?", results.gameName, results.gameResult); /* This is the updated data for results with saved game results and game name */
         return resultsFBid;
     });
 }
@@ -89,6 +90,7 @@ function setResultVars(obj){
 }
  // call to make object // function is being envoked in dombuilder.js line 174
  function makeResultObj(gameName, gameResult) {
+    console.log("RESULTS line 92: what is gameName?", gameName);
     let resultNew = {
         uid: results.uid,
         gameName : gameName,
@@ -96,15 +98,13 @@ function setResultVars(obj){
     };    
         // console.log("what is currentUser in line 96 of results.js",results.uid.uid); /* This returns the user uid to results node */
         console.log("what is resultNew in line 97 of results.js", resultNew);
-        addResult(resultNew).then((resolve)=> {
-            // console.log("results.js line 99: what is resolve?", resolve);/* This retunrns a firebase id for results posted */
-        return resolve;
-        });
+        addResult(resultNew);
+        // .then((resolve)=> {
+        //     console.log("results.js line 99: what is resolve?", typeof resolve);/* This retunrns a firebase id for results posted */
+        //     let data = Object.values(resolve);
+        //     buildResultObj(resolve);
+        // });
     }
-
-// **** Need to use in event listener for modal results **** //
-// makeResultObj();
-
 
 module.exports = {
     getResultDetails,   

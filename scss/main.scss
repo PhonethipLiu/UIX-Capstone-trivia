@@ -3,7 +3,7 @@ $font-body:  'Lato', sans-serif;
 $black-color: rgb(2, 2, 2);
 $red-color: rgb(153, 9, 7);
 $orange-color: rgb(245, 154, 19);
-$gray-color: rgb(238, 237, 231);
+$gray-color: rgb(182, 182, 182);
 
 
 //Main body styles
@@ -11,6 +11,11 @@ html,
 body {
   margin:  0;
   padding: 0;
+}
+
+h3 {
+    color: $gray-color;
+    font-weight: 200;
 }
 
 h4 {

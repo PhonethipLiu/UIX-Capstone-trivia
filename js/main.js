@@ -39,26 +39,30 @@ $(document).ready(function() {
     db.logOut();
     $("#login").removeClass("is-hidden");
     $("#logout").addClass("is-hidden");
+    $("h3").remove();
   });
 
   //EVENT LISTENER FOR CLICKING CAROUSEL PIC
   $(".carousel-item").on("click", "#art--quiz", function() {
-    console.log("main.logout clicked");
+    console.log("carousel item art-quiz clicked");
     dom.loadGameResult();
     });
   
   //envoking the function to run event listener for modal results 
   $("#quiz-display-area").on("click", "#quiz-save-result", function() {
   console.log("hit the modal results save button:");
-  results.makeResultObj();
-  dom.buildResultObj();
+  dom.buildResultObj(); 
   });
 
- // on click event listener for images to trigger build game
+ // on click event listener to delete game results from firebase and the DOM
 
+$(".delete-btn").on("click", "#user-game-result", function() {
+  console.log("hit delete quiz result button");
+$("#user-game-result > div").remove();
+results.deleteResult();
+});
  
-// Envoking function
-// loadGameResult();/* may have to move to a different section */
+
 
 });
 

@@ -26,11 +26,15 @@ firebase.auth().onAuthStateChanged((user) => {
         currentUser.displayName = null;
         console.log("curent user NOT logged in:", currentUser);
     }   
+    console.log("USERS.js line 29:current user Logged in?", currentUser);
 });
 
 function getUser() {
+    console.log("USERS.js line 33: getUser() current user Logged in?", currentUser);
     return currentUser.uid;
 }
+getUser();
+
 
 function setUser(val) {
     currentUser.uid = val;
@@ -57,7 +61,7 @@ function setUserVars(obj){
 function showUser(obj){
     let userDetails = getUserObj();
     console.log("USER.js line 51 // user.showUser: userDetails:", userDetails);
-    $(".sidebar").html(`<h4> Hi ${userDetails.displayName}</h4>`);
+    $(".sidebar").prepend(`<h3 class="display-name"> Hi ${userDetails.displayName}</h3>`);
 }
 
 // check for users
