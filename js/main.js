@@ -7,47 +7,58 @@ let $ = require('jquery'),
   templates = require("./dom-builder"),
   user = require("./user"),
   results = require("./results"),
+  dom = require("./dom-builder"),
   firebase = require("./fb-config");
 
 
 // bootstrap carousel
 $(document).ready(function() {
+  
   $('#myCarousel').on('slid.bs.carousel', function (e) {
     $('#myCarousel').carousel('2'); // Will slide to the slide 2 as soon as the transition to slide 1 is finished
   });
-  // Send results data to db then reload DOM with updated user results
-  $("#quiz-save-result").click(function() {
-  console.log("hit the modal results save button:");
-  });
-});
 
+  // Send results data to db then reload DOM with updated user results
+  
 // user login
-$('#login').click(function() {
+  $("#login").click(function() {
     console.log("clicked login");
     db.logInGoogle()
-    .then((results) => {
-    // console.log("result from login", result.user.uid);
-    user.setUser(results.user.uid);
+    .then((resolve) => {
+    console.log("Main.js line 29 Resolve from login", resolve.user.uid);
+    user.setUser(resolve.user.uid);
     $("#login").addClass("is-hidden");
     $("#logout").removeClass("is-hidden");
-    user.checkUserFB(results.user.uid);
+    user.checkUserFB(resolve.user.uid);
+    user.showUser(resolve.user.displayName);
     });
-});
+  });
 
-$("#logout").click(() => {
+  $("#logout").click(() => {
     console.log("main.logout clicked");
     db.logOut();
     $("#login").removeClass("is-hidden");
     $("#logout").addClass("is-hidden");
-});
+  });
 
-// click event listener for images to trigger build game
+  //EVENT LISTENER FOR CLICKING CAROUSEL PIC
+  $(".carousel-item").on("click", "#art--quiz", function() {
+    console.log("main.logout clicked");
+    dom.loadGameResult();
+    });
+  
+  //envoking the function to run event listener for modal results 
+  $("#quiz-display-area").on("click", "#quiz-save-result", function() {
+  console.log("hit the modal results save button:");
+  results.makeResultObj();
+  dom.buildResultObj();
+  });
 
-// function loadGamesToDom(){
-//   console.log("Main.js line 42 need to load game results");
-// }
+ // on click event listener for images to trigger build game
+
+ 
 // Envoking function
-// loadGamesToDom();/* may have to move to a different section */
+// loadGameResult();/* may have to move to a different section */
 
-
+});
 

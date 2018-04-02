@@ -1,5 +1,5 @@
 {
-    "quiz_1": [
+    "art": [
         {
             "question": "Painter Piet Mondrian (1872 - 1944) was a part of what movement?",
             "correct_answer": "Neoplasticism",
@@ -128,6 +128,312 @@
                 "1",
                 "3",
                 "2"
+            ]
+        }
+    ],
+
+    "tv": [
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "From what show is the character &quot;James Doakes&quot;? ",
+            "correct_answer": "Dexter",
+            "incorrect_answers": [
+                "Marvel&#039;s Daredevil",
+                "Boardwalk Empire",
+                "The Walking Dead"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What year did the television company BBC officially launch the channel BBC One?",
+            "correct_answer": "1936",
+            "incorrect_answers": [
+                "1948",
+                "1932",
+                "1955"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In the Doctor Who universe, how many times can a time lord normally regenerate?",
+            "correct_answer": "12",
+            "incorrect_answers": [
+                "11",
+                "13",
+                "15"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the title of The Allman Brothers Band instrumental used as the theme to the BBC motoring show, &#039;Top Gear&#039;?",
+            "correct_answer": "Jessica",
+            "incorrect_answers": [
+                "Angela",
+                "Erica",
+                "Sandra"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In what year did &quot;The Big Bang Theory&quot; debut on CBS?",
+            "correct_answer": "2007",
+            "incorrect_answers": [
+                "2008",
+                "2006",
+                "2009"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Grant Gustin plays which superhero on the CW show of the same name?",
+            "correct_answer": "The Flash",
+            "incorrect_answers": [
+                "The Arrow",
+                "Black Canary",
+                "Daredevil"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In Breaking Bad, the initials W.W. refer to which of the following?",
+            "correct_answer": "Walter White",
+            "incorrect_answers": [
+                "William Wolf",
+                "Willy Wonka",
+                "Wally Walrus"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In the show, Doctor Who, what does T.A.R.D.I.S stand for?",
+            "correct_answer": "Time And Relative Dimensions In Space",
+            "incorrect_answers": [
+                "Time And Resting Dimensions In Space",
+                "Time And Relative Dimensions In Style",
+                "Toilet Aid Rope Dog Is Soup"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Guy&#039;s Grocery Games is hosted by which presenter?",
+            "correct_answer": "Guy Fieri",
+            "incorrect_answers": [
+                "Guy Martin",
+                "Guy Ritchie",
+                "Ainsley Harriott"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In the television show Breaking Bad, what is the street name of Walter and Jesse&#039;s notorious product?",
+            "correct_answer": "Blue Sky",
+            "incorrect_answers": [
+                "Baby Blue",
+                "Rock Candy",
+                "Pure Glass"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In &quot;The Big Bang Theory&quot;, what is Howard Wolowitz&#039;s nickname in World of Warcraft?",
+            "correct_answer": "Wolowizard",
+            "incorrect_answers": [
+                "Sheldor",
+                "Rajesh",
+                "Priya"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In season one of the Netflix political drama &quot;House of Cards&quot;, what government position does Frank Underwood hold?",
+            "correct_answer": "House Majority Whip",
+            "incorrect_answers": [
+                "Attorney General",
+                "President",
+                "Chief of Staff"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "In &quot;Star Trek&quot;, what sauce is commonly used by Klingons on bregit lung?",
+            "correct_answer": "Grapok sauce",
+            "incorrect_answers": [
+                "Gazorpazorp pudding",
+                "Sweet chili sauce",
+                "Grapork sauce"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What breed of dog is &quot;Scooby Doo&quot;?",
+            "correct_answer": "Great Dane",
+            "incorrect_answers": [
+                "Pit bull",
+                "Boxer",
+                "Doberman Pinscher"
+            ]
+        },
+        {
+            "category": "Entertainment: Television",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of the following actors portrayed the Ninth Doctor in the British television show &quot;Doctor Who&quot;?",
+            "correct_answer": "Christopher Eccleston",
+            "incorrect_answers": [
+                "David Tennant",
+                "Matt Smith",
+                "Tom Baker"
+            ]
+        }
+    ],
+
+    "film": [
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which 1973 film does Yul Brynner play a robotic cowboy who malfunctions and goes on a killing\tspree?",
+            "correct_answer": "Westworld",
+            "incorrect_answers": [
+                "Runaway",
+                "Android",
+                "The Terminators"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which 1955 film does Frank Sinatra play Nathan Detroit?",
+            "correct_answer": "Guys and Dolls",
+            "incorrect_answers": [
+                "Anchors Aweigh",
+                "From Here to Eternity",
+                "High Society"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the name of the robot in the 1951 science fiction film classic &#039;The Day the Earth Stood Still&#039;?",
+            "correct_answer": "Gort",
+            "incorrect_answers": [
+                "Robby",
+                "Colossus",
+                "Box"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Who played Batman in the 1997 film &quot;Batman and Robin&quot;?",
+            "correct_answer": "George Clooney",
+            "incorrect_answers": [
+                "Michael Keaton",
+                "Val Kilmer",
+                "Christian Bale"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "This movie contains the quote, &quot;What we&#039;ve got here is a failure to communicate.&quot;",
+            "correct_answer": "Cool Hand Luke",
+            "incorrect_answers": [
+                "Bonnie and Clyde",
+                "The Graduate",
+                "In the Heat of the Night"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In which African country was the 2006 film &#039;Blood Diamond&#039; mostly set in?",
+            "correct_answer": "Sierra Leone",
+            "incorrect_answers": [
+                "Liberia",
+                "Burkina Faso",
+                "Central African Republic"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In what year was the movie &quot;Police Academy&quot; released?",
+            "correct_answer": "1984",
+            "incorrect_answers": [
+                "1986",
+                "1985",
+                "1983"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In The Lord of the Rings: The Fellowship of the Ring, which one of the following characters from the book was left out of the film?",
+            "correct_answer": "Tom Bombadil",
+            "incorrect_answers": [
+                "Strider",
+                "Barliman Butterbur",
+                "Celeborn"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Who is the director of the 1991 film &quot;Silence of the Lambs&quot;?",
+            "correct_answer": "Jonathan Demme",
+            "incorrect_answers": [
+                "Stanley Kubrick",
+                "Frank Darabont",
+                "Michael Bay"
+            ]
+        },
+        {
+            "category": "Entertainment: Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Mark Wahlberg played the titular character of which 2008 video-game adaptation?",
+            "correct_answer": "Max Payne",
+            "incorrect_answers": [
+                "Alan Wake",
+                "Hitman",
+                "God Of War"
             ]
         }
     ]

@@ -23,117 +23,104 @@
               <img src="imgs/logo_orange.svg" width="200" height="60" class="d-inline-block align-top" alt="Quiz-it"></a>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Games</a>
+                    <a id="login" class="nav-link " href="#">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Stats</a>
-                </li>
-                <li class="nav-item">
-                        <img src="imgs/icon-login.png" width="30" height="30" >
-                        <a id="login" class="nav-link " href="#">Login</a>
+                    <!-- <img src="imgs/icon-login.png" width="30" height="30" > -->
                     <a id="logout" class="nav-link is-hidden" href="#">Logout</a>
-                    <!-- <input class="btn btn-outline-secondary btn-sm" id="login-btn"type="button" value="login" > -->
                 </li>
             </ul>
         </nav>
-
-         <!-- User -->
-        <!-- <section class ="user-wrapper">
-                <div class="container ">
-                    <div class="row">
-                        <div class="col-sm">
-                            Hi Bob
-                            </div>
-                        <div class="col-sm">
-                            Games played
-                            </div>
-                        <div class="col-sm">
-                            Stats
-                            </div>
-                        <div class="col-sm">
-                            3 of 3
-                            </div>
-                    </div>
-                </div>
-            </section> -->
-
-
-        <!-- Carosuel of 3 featured Quiz-zes -->
-        <section class="carousel-wrapper">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <a href="#quiz-display-area"> <img class="d-block w-100" src="imgs/image1_Test.png" alt="First slide"> </a>
-                    </div>
-                    <div class=" carousel-item">
-                            <a href="#quiz-display-area"> <img class="d-block w-100" src="imgs/Asian_test.png" alt="Second slide"> </a>
-                    </div>
-                    <div class="carousel-item">
-                            <a href="#quiz-display-area"><img class="d-block w-100" src="imgs/art_test.png" alt="Third slide"> </a>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div><!-- end Carosuel of 3 featured Quiz-zes -->
-        </section>
-        
     </header>
-    
-    <!-- Main -->
-   
-    <section id="quiz-area"> <!-- start cards/output area  -->
+
+    <main>   
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-9 left-col">
+                <section class="carousel-wrapper"> <!-- start col-9 in carousel-wrapper container-->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="#quiz-area"> <img class="d-block w-100" id="biz--quiz" src="imgs/image1_Test.png" alt="First slide"> </a>
+                            </div>
+                            <div class=" carousel-item">
+                                    <a href="#quiz-area"> <img class="d-block w-100" id="asian--quiz" src="imgs/Asian_test.png" alt="Second slide"> </a>
+                            </div>
+                            <div class="carousel-item">
+                                    <a href="#quiz-area"><img class="d-block w-100" id="art--quiz" src="imgs/art_test.png" alt="Third slide"> </a>
+                            </div>
+                        </div> <!-- end carousel-inner div-->
+
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div><!-- end Carosuel of 3 featured Quiz-zes -->
+                </section>
+            
+            <!-- <div class="row">  -->
+                <section id="quiz-area"> <!-- start cards/output area  -->     
+                    <div id="quiz-display-area">
+                    </div> <!-- ** close ** col-8 -->
+                </section> <!-- end cards/output area  -->
+                
+            </div> <!-- end col-9 in carousel-wrapper container-->
+            
+            
+            <div class="col-md-3 right-col">
+                <div class="container">
+                    <div class="sidebar" id ="user--profile">
+                        <button class="btn btn-block btn-outline-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Your game results
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseExample">
+                                <div class="card card-body" id ="user-game-result">
+                                </div>
+                            </div>
+                    </div>
+                
+                    <div class="more-games" id="game--list">
+                        <h4>More trivia</h4>
+                        <div class="card"> <!-- image card-1 for quiz -->
+                            <img class="card-img-top" src="imgs/movie-test.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">How well do you know your movies?</h5>
+                                <a href="#" class="btn btn-secondary btn-sm">Play</a>
+                            </div>
+                        </div> <!-- ** close ** image card-1 for quiz -->
+
+                        <div class="card"> <!-- image card-2 for quiz -->
+                            <img class="card-img-top" src="imgs/elephant-test.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">How well do you know your movies?</h5>
+                                <a href="#" class="btn btn-secondary btn-sm">Play</a>
+                            </div>
+                        </div> <!-- ** close ** image card-2 for quiz -->
+
+                        <div class="card"> <!-- image card-3 for quiz -->
+                            <img class="card-img-top" src="imgs/musician-test.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">How well do you know your movies?</h5>
+                                <a href="#" class="btn btn-secondary btn-sm">Play</a>
+                            </div>
+                        </div> <!-- ** close ** image card-3 for quiz -->
+                    </div> <!-- ** close ** more games -->
+                </div> <!-- ** close ** sidebar -->
+            </div> <!-- ** close ** col 3 -->
+
+        </div> <!-- ** close ** row -->
+    </main>    
         
-         <div class="container">  
-            <div class="row">      
-                <div class="col-sm-8" id="quiz-display-area">
-                </div> <!-- ** close ** col-9 -->
-
-                <div class="col-sm-4" id="game--list">
-                    <h4>More Games</h4>
-                    <label class="kicker"> Trivia</label>
-                    <div class="card"> <!-- image card-1 for quiz -->
-                        <img class="card-img-top" src="imgs/movie-test.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">How well do you know your movies?</h5>
-                            <a href="#" class="btn btn-secondary btn-sm">Play</a>
-                        </div>
-                    </div> <!-- ** close ** image card-1 for quiz -->
-
-                    <div class="card"> <!-- image card-2 for quiz -->
-                        <img class="card-img-top" src="imgs/elephant-test.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">How well do you know your movies?</h5>
-                            <a href="#" class="btn btn-secondary btn-sm">Play</a>
-                        </div>
-                    </div> <!-- ** close ** image card-2 for quiz -->
-
-                    <div class="card"> <!-- image card-3 for quiz -->
-                        <img class="card-img-top" src="imgs/musician-test.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">How well do you know your movies?</h5>
-                            <a href="#" class="btn btn-secondary btn-sm">Play</a>
-                        </div>
-                    </div> <!-- ** close ** image card-3 for quiz -->
-                </div> <!-- ** close ** col 3 -->
-
-            </div> <!-- ** close ** row -->
-        </div>  <!-- ** close ** container -->
-   
-    </section> <!-- end cards/output area  -->
-
-
-
     <!-- footer -->
     <footer class="foot-wrapper">
         <div class="row">

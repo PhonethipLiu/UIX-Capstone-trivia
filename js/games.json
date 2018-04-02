@@ -2,7 +2,7 @@
     "trivia": [
        
         {
-            "game_id": "trivia-art",
+            "gameId": "trivia-art",
             "name": "Test your art knowledge",
             "q1": "Painter Piet Mondrian (1872 - 1944) was a part of what movement?",
             "a1":[ "Neoplasticism", "Precisionism", "Cubism", "Impressionism"],
@@ -31,7 +31,7 @@
             "results": [ "You are an art novice. You appreciate the artwork and not necessarliy the history of the work.", "You are an art enthusiast. You are admirer of art but not an art history buff.", "Bravo, you are an art aficionado! You are an art scholar and appreciate art history."]
         },
          {
-            "game_id": "trivia-film",
+            "gameId": "trivia-film",
             "name": "Are you a movie buff?",
             "q1": "In which 1973 film does Yul Brynner play a robotic cowboy who malfunctions and goes on a killing spree?",
             "a1": ["Westworld", "Runaway", "Android", "The Terminators"],
