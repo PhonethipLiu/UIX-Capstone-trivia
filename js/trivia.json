@@ -27,7 +27,7 @@
             "a11": ["Georges Seurat", "Paul C&eacute;zanne", "Vincent Van Gogh", "Henri Rousseau"],
             "q12": "How many paint and pastel versions of &quot;The Scream&quot; is Norwegian painter Edvard Munch believed to have produced?",
             "a12": ["4", "1", "3","2"],
-            "results": [ "You are an art novice. You appreciate the artwork and not necessarliy the history of the work.", "You are an art enthusiast. You are admirer of art but not an art history buff.",  ]
+            "results": [ "You are an art novice. You appreciate the artwork and not necessarliy the history of the work.", "You are an art enthusiast. You are admirer of art but not an art history buff.", "Bravo, you are an art aficionado! You are an art scholar and appreciate art history." ]
         },
         {
             "gameId": "trivia-film",

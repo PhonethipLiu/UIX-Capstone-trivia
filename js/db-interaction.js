@@ -4,7 +4,7 @@
 
 let $ = require('jquery'),
     firebase = require("./fb-config"),
-    quiz = require("./dom-builder"),
+    // quiz = require("./dom-builder"),
     provider = new firebase.auth.GoogleAuthProvider();
 
 // *************************************
@@ -121,8 +121,8 @@ function deleteResult(resultsId) {
 function editResult(results) {
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results.json`,
-        // type: 'GET',
-        type: 'PUT',
+        type: 'GET',
+        // type: 'PUT',
         data: JSON.stringify(results),
         dataType: 'json'
     }).done((userId) => {

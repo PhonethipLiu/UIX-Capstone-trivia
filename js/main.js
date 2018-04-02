@@ -17,6 +17,7 @@ $(document).ready(function() {
   $('#myCarousel').on('slid.bs.carousel', function (e) {
     $('#myCarousel').carousel('2'); // Will slide to the slide 2 as soon as the transition to slide 1 is finished
   });
+
   // Send results data to db then reload DOM with updated user results
   
 // user login
@@ -29,6 +30,7 @@ $(document).ready(function() {
     $("#login").addClass("is-hidden");
     $("#logout").removeClass("is-hidden");
     user.checkUserFB(resolve.user.uid);
+    user.showUser(resolve.user.displayName);
     });
   });
 
@@ -39,20 +41,22 @@ $(document).ready(function() {
     $("#logout").addClass("is-hidden");
   });
 
-  $("#art--quiz").on((e) => {
-    dom.makeGame();
+  //EVENT LISTENER FOR CLICKING CAROUSEL PIC
+  $(".carousel-item").on("click", "#art--quiz", function() {
+    console.log("main.logout clicked");
+    dom.loadGameResult();
     });
-  // envoking the function to run event listener for modal results 
-  $("#quiz-save-result").click(function() {
+  
+  //envoking the function to run event listener for modal results 
+  $("#quiz-display-area").on("click", "#quiz-save-result", function() {
   console.log("hit the modal results save button:");
   results.makeResultObj();
+  dom.buildResultObj();
   });
 
  // on click event listener for images to trigger build game
 
  
-
-
 // Envoking function
 // loadGameResult();/* may have to move to a different section */
 

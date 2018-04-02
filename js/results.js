@@ -8,23 +8,23 @@ let $ = require('jquery'),
     dom = require("./dom-builder"),
     user = require("./user");
 
-// let uid = user.getUserObj();
+let uid = user.getUserObj();
 let results = {
-    uid: null,
+    uid: uid,
     gameName : null,
     gameResult :null
 };
 
 //POST results of quiz to user profile 
 function getResultDetails(uid){
-    console.log("line 31 of results.js: what is user uid in results?",uid);
+    console.log("line 20 of results.js: what is user uid in results?",uid);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results.json?orderBy="uid"&equalTo="${uid}"`
     }).done((resolve) => {
-        console.log("Results.js line 35: getResultDetails",resolve);
+        console.log("Results.js line 24: getResultDetails",resolve);
         return resolve;
     }).fail((error) => {
-        console.log("Results.js line 38: getFBResultsDetails:", error);
+        console.log("Results.js line 28: getFBResultsDetails:", error);
         return error;
     });
 }
@@ -36,18 +36,19 @@ function addResult(results) {
         data: JSON.stringify(results),
         dataType: 'json'
     }).done((resultsFBid) => {
-        console.log("results.js line 34: what is resultsFBid ?", resultsFBid);
+        console.log("results.js line 39: what is results?", results); /* This is the updated data for results with saved game results and game name */
         return resultsFBid;
     });
 }
   
 // // delete results of quiz from user profile
 function deleteResult(resultsId) {
-    console.log("what is deleteUserResult in line 69 of results.js?", resultsId);
+    console.log("RESULTS.JS line 46: what is deleteUserResult?", resultsId);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results/${resultsId}.json`,
         method: 'DELETE'
     }).done((data) => {
+        console.log("RESULTS.JS line 51: deleteResult = data resolve:", data);
         return data;
     });
 }
@@ -55,19 +56,19 @@ function deleteResult(resultsId) {
 function editResult(results) {
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results.json`,
-        // type: 'GET',
-        type: 'PUT',
+        type: 'GET',
+        // type: 'PUT',
         data: JSON.stringify(results),
         dataType: 'json'
-    }).done((userId) => {
-        console.log("results.js line 86: editResult = ?:", editResult);
-        return userId;
+    }).done((fbId) => {
+        console.log("results.js line 63: editResult = fbID?:", fbId);/* This returns the FBid for this node*/
+        return fbId;
     });
 }
 
 //GET SAVE GAME RESULTS
 function getResult(){
-    return results.game_result;
+    return results.gameResult;
 }
 
 //SET RESULT VALUE **** MIGHT NOT NEED!!!
@@ -86,58 +87,24 @@ function setResultVars(obj){
         resolve(results);
     });
 }
- // call to make object
-//  function makeResultObj(gameName, gameResult) {
-//     let resultNew = {
-//         uid: uid.uid,
-//         gameName : gameName,
-//         gameResult : gameResult
-//     };    
-//         console.log("what is currentUser in line 106 of results.js", results.uid);
-//         console.log("what is resultNew in line 107 of results.js", resultNew);
-//         addResult(resultNew).then((resolve)=> {
-//             console.log("results.js line 108: what is addResult(resultNew)?",  resolve);
-//         return resolve;
-//         });
-//     }
+ // call to make object // function is being envoked in dombuilder.js line 174
+ function makeResultObj(gameName, gameResult) {
+    let resultNew = {
+        uid: results.uid,
+        gameName : gameName,
+        gameResult : gameResult
+    };    
+        // console.log("what is currentUser in line 96 of results.js",results.uid.uid); /* This returns the user uid to results node */
+        console.log("what is resultNew in line 97 of results.js", resultNew);
+        addResult(resultNew).then((resolve)=> {
+            // console.log("results.js line 99: what is resolve?", resolve);/* This retunrns a firebase id for results posted */
+        return resolve;
+        });
+    }
 
-
-//testing
-function makeResultObj(gameName, gameResult) {
-    user.getUserObj()
-    .then((resolve) => {
-        let data = Object.values(resolve);
-        console.log("what is currentUser in line 110 of results.js", data);
-        let resultNew = {
-            uid: data.uid,
-            gameName : gameName,
-            gameResult : gameResult
-        };    
-        return resultNew;
-    }).then((resultNew) => {
-        return addResult(resultNew);
-        // .then((resolve)=> {
-        //     console.log("results.js line 117: what is addResult(resultNew)?",  resolve);
-        // return resolve;
-        // });
-    });
-}
-
-
-// envoking the function to run
 // **** Need to use in event listener for modal results **** //
 // makeResultObj();
 
-
-//call the function to add results node to firebase and then return all the result object
-// addResult(results).then((resolve) => {
-//     makeResultObj(resolve);
-//     console.log("results.js line 101: what is addResult(results)?", resolve);
-//     return resolve;
-//     },
-//     (reject) => {
-//     console.log("results.js line 104 :DOH! something went wrong with the add UserResult()");
-// });
 
 module.exports = {
     getResultDetails,   
