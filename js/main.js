@@ -10,6 +10,17 @@ let $ = require('jquery'),
   firebase = require("./fb-config");
 
 
+function loadResultsToDom() {
+  console.log("**** DOM.js line 182: loadResultsToDom() going to load game results");
+  let currentUser = user.getUser();
+  console.log("**** DOM.js line 184: loadResultsToDom() Current User is...", currentUser);
+  results.getResultDetails(currentUser)
+  .then((resolve) => {
+      console.log("**** DOM.js line 187: got resolve?" ,resolve);
+      dom.makeResultObj(resolve);
+  });
+}
+
 // bootstrap carousel
 $(document).ready(function() {
   
@@ -47,6 +58,7 @@ $(document).ready(function() {
     dom.loadGameResult();
     });
   
+  
   //envoking the function to run event listener for modal results 
   $("#quiz-display-area").on("click", "#quiz-save-result", function() {
   console.log("hit the modal results save button:");
@@ -56,11 +68,16 @@ $(document).ready(function() {
 
  // on click event listener to delete game results from firebase and the DOM
 
-$("#quiz-delete-result").on("click", "#user-game-result", function() {
-  console.log("hit delete quiz result button");
-$("#user-game-result").remove();
-results.deleteResult(user.getUser());
-});
+  $("#user-game-result").on("click", ".delete-btn", function() {
+  console.log("clicked delete quiz result button",$(this).closest(".saved-Results"));
+  // let resultID = $(this).id("${currentResult.resultID}");
+  // results.deleteResult(resultID)
+  //   .then(() => {
+  //     loadResultsToDom();
+  //   });
+    $($(this).closest(".saved-Results")).remove();
+
+  });
  
 
 
