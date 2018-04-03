@@ -173,17 +173,37 @@ function loadGameResult(){
 // ******* PRINT MODAL RESULTS TO DOM ******//
 function printGameResults(resultNew){
     console.log("***** DOM line 175;PrintGameResults printing?",resultNew.gameName, resultNew.gameResult );
-
-    $("#user-game-result").append(`<div class="saved-Results"><h5>${resultNew.gameName}</h5> <p>${resultNew.gameResult}</p> <div class="result-footer">
+    $("#user-game-result").append(`<div class="saved-Results">
+    <h5>${resultNew.gameName}</h5> 
+    <p>${resultNew.gameResult}</p> 
+    <div class="result-footer">
     <button class="btn btn-secondary btn-sm delete-btn"  id="quiz-delete-result">Delete</button>
-    </div>
-</div></div>`);
+    </div></div>`);
+}
+
+
+function makeResultObj(results) {
+   
+    for (let game in results){
+
+        let currentResult = results[game];
+        console.log ("DOM.js line 197 makeResultObj  currentResults is...", currentResult);
+
+        $(`<div class="saved-Results">
+        <h5>${currentResult.gameName}</h5> 
+        <p>${currentResult.gameResult}</p> 
+        <div class="result-footer">
+            <button class="btn btn-secondary btn-sm delete-btn" id="${currentResult.resultID}"> Delete </button>
+        </div>
+        </div>`);
+        
+    }
 }
 
 module.exports = {
     getTrivia,
     makeGame, 
     printGameResults,
-    // printResultObj,
+    makeResultObj,
     loadGameResult
 };
