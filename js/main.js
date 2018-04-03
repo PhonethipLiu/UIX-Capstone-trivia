@@ -3,10 +3,9 @@
 // console.log("Main.js is working");
 
 let $ = require('jquery'),
-  db = require("./db-interaction"),
-  templates = require("./dom-builder"),
-  user = require("./user"),
-  results = require("./results"),
+  db = require("./new-db-interaction"),
+  user = require("./new-user"),
+  results = require("./new-results"),
   dom = require("./dom-builder"),
   firebase = require("./fb-config");
 
@@ -25,11 +24,11 @@ $(document).ready(function() {
     console.log("clicked login");
     db.logInGoogle()
     .then((resolve) => {
-    console.log("Main.js line 29 Resolve from login", resolve.user.uid);
-    user.setUser(resolve.user.uid);
+    console.log("Main.js line 29 Resolve from login", resolve.user);
+    user.setUserVars(resolve.user); /* this gets the user object*/
+    user.checkUserFB(resolve.user.uid);
     $("#login").addClass("is-hidden");
     $("#logout").removeClass("is-hidden");
-    user.checkUserFB(resolve.user.uid);
     user.showUser(resolve.user.displayName);
     });
   });
@@ -39,26 +38,30 @@ $(document).ready(function() {
     db.logOut();
     $("#login").removeClass("is-hidden");
     $("#logout").addClass("is-hidden");
+    $("h3").remove();
   });
 
   //EVENT LISTENER FOR CLICKING CAROUSEL PIC
   $(".carousel-item").on("click", "#art--quiz", function() {
-    console.log("main.logout clicked");
+    console.log("carousel item art-quiz clicked");
     dom.loadGameResult();
     });
   
   //envoking the function to run event listener for modal results 
   $("#quiz-display-area").on("click", "#quiz-save-result", function() {
   console.log("hit the modal results save button:");
-  results.makeResultObj();
-  dom.buildResultObj();
+  dom.buildResultObj(); 
   });
 
- // on click event listener for images to trigger build game
+ // on click event listener to delete game results from firebase and the DOM
 
+$("#quiz-delete-result").on("click", "#user-game-result", function() {
+  console.log("hit delete quiz result button");
+$("#user-game-result").remove();
+results.deleteResult();
+});
  
-// Envoking function
-// loadGameResult();/* may have to move to a different section */
+
 
 });
 
