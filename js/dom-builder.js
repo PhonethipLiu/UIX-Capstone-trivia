@@ -174,22 +174,11 @@ function loadGameResult(){
 function printGameResults(resultNew){
     console.log("***** DOM line 175;PrintGameResults printing?",resultNew.gameName, resultNew.gameResult );
 
-    $("#user-game-result").append(`<div><h5>${resultNew.gameName}</h5> <p>${resultNew.gameResult}</p> <div class="result-footer">
+    $("#user-game-result").append(`<div class="saved-Results"><h5>${resultNew.gameName}</h5> <p>${resultNew.gameResult}</p> <div class="result-footer">
     <button class="btn btn-secondary btn-sm delete-btn"  id="quiz-delete-result">Delete</button>
     </div>
 </div></div>`);
 }
-
-// MAKE RESULT OBJ TO PRINT TO DOM IN DIV WITH #USER-GAME-RESULT 
-// ENVOKED IN MAIN JS WITH EVENT LISTENER
-// function printResultObj(){
-//     results.editResult()
-//     .then((resolve) => {
-//         let data = Object.values(resolve); 
-//         console.log("DOM.js Line 187: what is getResult() resolve data? ", data);
-//         return printGameResults(data);
-//     });
-//   }
 
 module.exports = {
     getTrivia,

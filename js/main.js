@@ -56,10 +56,10 @@ $(document).ready(function() {
 
  // on click event listener to delete game results from firebase and the DOM
 
-$("#quiz-delete-result").on("click", "#user-game-result", function() {
+$("#user-game-result").on("click", "#quiz-delete-result", function() {
   console.log("hit delete quiz result button");
-$("#user-game-result").remove();
 results.deleteResult(user.getUser());
+$("#user-game-result").remove();
 });
  
 
