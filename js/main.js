@@ -50,7 +50,8 @@ $(document).ready(function() {
   //envoking the function to run event listener for modal results 
   $("#quiz-display-area").on("click", "#quiz-save-result", function() {
   console.log("hit the modal results save button:");
-  dom.buildResultObj(); 
+  results.makeResultObj();
+  // dom.printResultObj();
   });
 
  // on click event listener to delete game results from firebase and the DOM
@@ -58,7 +59,7 @@ $(document).ready(function() {
 $("#quiz-delete-result").on("click", "#user-game-result", function() {
   console.log("hit delete quiz result button");
 $("#user-game-result").remove();
-results.deleteResult();
+results.deleteResult(user.getUser());
 });
  
 

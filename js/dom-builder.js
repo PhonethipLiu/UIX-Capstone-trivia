@@ -156,43 +156,25 @@ $("#quiz-display-area").append(
         $('#game--questions').append(Q1 + Q2 + Q3 + Q4 + Q5 + Q6 + Q7 + Q8 + Q9 + Q10 + Q11 + Q12);
     }
 
-
-//Call function: Build Result object with gameName & gameResult to be added to FB along with uid and displayName
-/* POST User Id and displayName successfully to FB */
-getTrivia().then((resolve) => {
-    let data = Object.values(resolve);
-    // console.log("line 164 of dom-builder.js make call for trivia resolve", data[0]); /* This returns the first object of trivia */
-    let saveResult = {
-        gameName : data[0].name,
-        gameResult : data[0].results[2]
-    };
-    // results.makeResultObj();
-    // results.makeResultObj(saveResult.gameName, saveResult.gameResult);
-    // console.log("line 168 of dom-builder.js : results.make call for trivia resolve data", saveResult.gameName, saveResult.gameResult);/* This shows the gameName and game Result passed in saveResult variable*/
-    // buildResultObj(saveResult);
-    // // console.log("DOM.js line 194: buildResultObj(resolve); what is resolve", resolve); /* This returns the trivia objects. */
-    },
-    (reject) => {
-        console.log("DOH! something went wrong");
-});
-
-
 // ******* FUNCTION TO CREATE THE GAME QUESTIONS ONCE THE CAROUSEL IMGAE IS CLICKED -- IS ENVOKED IN MAIN JS WITH EVENT LISTENER ******//
 function loadGameResult(){
-    console.log("DOM.js line 182: loadGameResult");
+    console.log("DOM.js line 161: loadGameResult");
     getTrivia()
     .then((resolve) => {
         let data = Object.values(resolve);
         let quiz = data[0]; 
     return quiz;
     }).then((quiz) => {
+        // console.log("**** DOM.js line 188: what is quiz?", quiz);
         return makeGame(quiz);
-     });
-    }
+    });
+}
 
 // ******* PRINT MODAL RESULTS TO DOM ******//
-function printGameResults(data){
-    $("#user-game-result").append(`<div><h5>${data.gameName}</h5> <p>${data.gameResult}</p> <div class="result-footer">
+function printGameResults(resultNew){
+    console.log("***** DOM line 175;PrintGameResults printing?",resultNew.gameName, resultNew.gameResult );
+
+    $("#user-game-result").append(`<div><h5>${resultNew.gameName}</h5> <p>${resultNew.gameResult}</p> <div class="result-footer">
     <button class="btn btn-secondary btn-sm delete-btn"  id="quiz-delete-result">Delete</button>
     </div>
 </div></div>`);
@@ -200,19 +182,19 @@ function printGameResults(data){
 
 // MAKE RESULT OBJ TO PRINT TO DOM IN DIV WITH #USER-GAME-RESULT 
 // ENVOKED IN MAIN JS WITH EVENT LISTENER
-function buildResultObj(){
-    results.getResultDetails()
-    .then((resolve) => {
-        let data = Object.values(resolve); 
-        console.log("DOM.js Line 206: what is getResultDetails resolve data? ", data);
-        return printGameResults(data);
-    });
-  }
+// function printResultObj(){
+//     results.editResult()
+//     .then((resolve) => {
+//         let data = Object.values(resolve); 
+//         console.log("DOM.js Line 187: what is getResult() resolve data? ", data);
+//         return printGameResults(data);
+//     });
+//   }
 
 module.exports = {
     getTrivia,
     makeGame, 
     printGameResults,
-    buildResultObj,
+    // printResultObj,
     loadGameResult
 };
