@@ -50,7 +50,7 @@ $(document).ready(function() {
   //envoking the function to run event listener for modal results 
   $("#quiz-display-area").on("click", "#quiz-save-result", function() {
   console.log("hit the modal results save button:");
-  dom.buildResultObj(); 
+  results.makeResultObj();
   });
 
  // on click event listener to delete game results from firebase and the DOM

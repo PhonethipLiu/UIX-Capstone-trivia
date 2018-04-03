@@ -9,18 +9,18 @@ let $ = require('jquery'),
     user = require("./new-user");
 
 // let uid = user.getUserObj();
-// console.log("RESULTS.js line 12: what is user uid in results?",uid);
+
 let results = {
-    uid: user.getUser(),
+    uid: null,
     gameName : null,
     gameResult :null
 };
 
 //POST results of quiz to user profile 
-function getResultDetails(uid){
-    console.log("line 20 of results.js: what is user uid in results?",uid);
+function getResultDetails(user){
+    console.log("line 20 of results.js: what is user uid in results?", user);
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/results.json?orderBy="uid"&equalTo="${uid}"`
+        url: `${firebase.getFBsettings().databaseURL}/results.json?orderBy="uid"&equalTo="${user}"`
     }).done((resolve) => {
         console.log("Results.js line 24: getResultDetails",resolve);
         return resolve;
@@ -37,9 +37,9 @@ function addResult(results) {
         type: 'POST',
         data: JSON.stringify(results),
         dataType: 'json'
-    }).done((resultsFBid) => {
-        console.log("results.js line 39: what is results?", resultsFBid, results.gameName, results.gameResult); /* This is the updated data for results with saved game results and game name */
-        return resultsFBid;
+    }).done((resultsfbID) => {
+        console.log("results.js line 39: what is results?", resultsfbID, results.gameName, results.gameResult); /* This is the updated data for results with saved game results and game name */
+        return resultsfbID;
     });
 }
   
@@ -79,30 +79,34 @@ function setResult(val) {
     results.uid = val;
 }
 
-function setResultVars(obj){
-    console.log("line 92 results.setResultVars: obj", obj);
-    return new Promise((resolve, reject) => {
-        results.fbId = obj.fbId ? obj.fbId : results.fbId;
-        results.uid = obj.uid ? obj.uid : results.uid;
-        results.gameName = obj.gameName ? obj.gameName: results.gameName;
-        results.gameResult = obj.gameResult ? obj.gameResult: results.gameResult;
-        resolve(results);
-    });
-}
+// function setResultVars(obj){
+//     console.log("line 92 results.setResultVars: obj", obj);
+//     return new Promise((resolve, reject) => {
+//         results.fbId = obj.fbId ? obj.fbId : results.fbId;
+//         results.uid = obj.uid ? obj.uid : results.uid;
+//         results.gameName = obj.gameName ? obj.gameName: results.gameName;
+//         results.gameResult = obj.gameResult ? obj.gameResult: results.gameResult;
+//         resolve(results);
+//     });
+// }
+
  // call to make object // function is being envoked in dombuilder.js line 174
  function makeResultObj(gameName, gameResult) {
-    //  let userObj = user.getUserObj();
-    console.log("RESULTS line 92: what is gameName?", results.uid);
-    let resultNew = {
-        uid: results.uid,
-        gameName : gameName,
-        gameResult : gameResult
-    };    
+    dom.getTrivia()
+    .then((resolve) => {
+        let data = Object.values(resolve);
+        console.log("***** NEW-result.js line 97; make call for trivia resolve", data[0]); /* This returns the first object of trivia */
+    
+        let resultNew = {
+            uid: user.getUser(),
+            gameName : data[0].name,
+            gameResult : data[0].results[2]
+        };    
+    addResult(resultNew);
         // console.log("what is currentUser in line 96 of results.js",results.uid.uid); /* This returns the user uid to results node */
-        console.log("what is resultNew in line 97 of results.js", resultNew);
-       addResult(resultNew);
-        
-    }
+        console.log("what is resultNew in line 107 of results.js", resultNew);
+    });
+}
 
 module.exports = {
     getResultDetails,   
@@ -111,6 +115,6 @@ module.exports = {
     editResult,
     getResult,
     setResult,
-    setResultVars,
+    // setResultVars,
     makeResultObj
 };
