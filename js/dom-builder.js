@@ -171,8 +171,10 @@ function loadGameResult(){
 }
 
 // ******* PRINT MODAL RESULTS TO DOM ******//
-function printGameResults(data){
-    $("#user-game-result").append(`<div><h5>${data.gameName}</h5> <p>${data.gameResult}</p> <div class="result-footer">
+function printGameResults(resultNew){
+    console.log("***** DOM line 175;PrintGameResults printing?",resultNew.gameName, resultNew.gameResult );
+
+    $("#user-game-result").append(`<div><h5>${resultNew.gameName}</h5> <p>${resultNew.gameResult}</p> <div class="result-footer">
     <button class="btn btn-secondary btn-sm delete-btn"  id="quiz-delete-result">Delete</button>
     </div>
 </div></div>`);
@@ -180,36 +182,19 @@ function printGameResults(data){
 
 // MAKE RESULT OBJ TO PRINT TO DOM IN DIV WITH #USER-GAME-RESULT 
 // ENVOKED IN MAIN JS WITH EVENT LISTENER
-// function buildResultObj(){
-
-// //Call function: Build Result object with gameName & gameResult to be added to FB along with uid and displayName
-// /* POST User Id and displayName successfully to FB */
-// // dom.getTrivia().then((resolve) => {
-// //     let data = Object.values(resolve);
-// //     console.log("***** dom-builder.js line 189; make call for trivia resolve", data[0]); /* This returns the first object of trivia */
-// //     let saveResult = {
-// //         gameName : data[0].name,
-// //         gameResult : data[0].results[2]
-// //     };
-// //    results.makeResultObj(saveResult.gameName, saveResult.gameResult);
-// //    console.log("***** dom-builder.js line 196 of dom-builder.js : results.makeResultObj(savedResult.gameName, saveResult.gameResult", saveResult.gameName, saveResult.gameResult);/* This shows the gameName and game Result passed in saveResult variable*/
-//     },
-//     (reject) => {
-//         console.log("DOH! something went wrong");
-// });
-    // results.getResult()
-    // .then((resolve) => {
-    //     let data = Object.values(resolve); 
-    //     console.log("DOM.js Line 206: what is getResult() resolve data? ", data);
-    //     return printGameResults(data);
-
-    // });
+// function printResultObj(){
+//     results.editResult()
+//     .then((resolve) => {
+//         let data = Object.values(resolve); 
+//         console.log("DOM.js Line 187: what is getResult() resolve data? ", data);
+//         return printGameResults(data);
+//     });
 //   }
 
 module.exports = {
     getTrivia,
     makeGame, 
     printGameResults,
-    // buildResultObj,
+    // printResultObj,
     loadGameResult
 };

@@ -55,66 +55,41 @@ function deleteResult(resultsId) {
     });
 }
 
-function editResult(results) {
+function editResult(resultsId) {
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/results.json`,
+        url: `${firebase.getFBsettings().databaseURL}/results/${resultsId}.json`,
         type: 'GET',
-        // type: 'PUT',
         data: JSON.stringify(results),
         dataType: 'json'
-    }).done((fbId) => {
-        console.log("results.js line 63: editResult = fbID?:", fbId);/* This returns the FBid for this node*/
-        return fbId;
+    }).done((data) => {
+        console.log("results.js line 66: editResult = fbID?:", data);/* This returns the FBid for this node*/
+        return data;
     });
 }
-
-//GET SAVE GAME RESULTS
-function getResult(){
-    return results.gameResult;
-}
-
-//SET RESULT VALUE **** MIGHT NOT NEED!!!
-function setResult(val) {
-    console.log("what is setResult in line 63 of results.js?", results.uid);
-    results.uid = val;
-}
-
-// function setResultVars(obj){
-//     console.log("line 92 results.setResultVars: obj", obj);
-//     return new Promise((resolve, reject) => {
-//         results.fbId = obj.fbId ? obj.fbId : results.fbId;
-//         results.uid = obj.uid ? obj.uid : results.uid;
-//         results.gameName = obj.gameName ? obj.gameName: results.gameName;
-//         results.gameResult = obj.gameResult ? obj.gameResult: results.gameResult;
-//         resolve(results);
-//     });
-// }
 
  // call to make object // function is being envoked in dombuilder.js line 174
  function makeResultObj(gameName, gameResult) {
     dom.getTrivia()
     .then((resolve) => {
         let data = Object.values(resolve);
-        console.log("***** NEW-result.js line 97; make call for trivia resolve", data[0]); /* This returns the first object of trivia */
+        console.log("***** NEW-result.js line 87; make call for trivia resolve", data[0]); /* This returns the first object of trivia */
     
         let resultNew = {
             uid: user.getUser(),
             gameName : data[0].name,
             gameResult : data[0].results[2]
         };    
-    addResult(resultNew);
-        // console.log("what is currentUser in line 96 of results.js",results.uid.uid); /* This returns the user uid to results node */
-        console.log("what is resultNew in line 107 of results.js", resultNew);
-    });
+        addResult(resultNew);
+        return dom.printGameResults(resultNew);
+         });
 }
+
+
 
 module.exports = {
     getResultDetails,   
     addResult,
     deleteResult,
     editResult,
-    getResult,
-    setResult,
-    // setResultVars,
     makeResultObj
 };
