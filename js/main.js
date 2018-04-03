@@ -69,13 +69,14 @@ $(document).ready(function() {
  // on click event listener to delete game results from firebase and the DOM
 
   $("#user-game-result").on("click", ".delete-btn", function() {
-  console.log("clicked delete quiz result button", $(this).id("${currentResult.resultID}"));
-  let resultID = $(this).id("${currentResult.resultID}");
-  results.deleteResult(resultID)
-    .then(() => {
-      loadResultsToDom();
-    });
-    $(".saved-Results").remove();
+  console.log("clicked delete quiz result button",$(this).closest(".saved-Results"));
+  // let resultID = $(this).id("${currentResult.resultID}");
+  // results.deleteResult(resultID)
+  //   .then(() => {
+  //     loadResultsToDom();
+  //   });
+    $($(this).closest(".saved-Results")).remove();
+
   });
  
 

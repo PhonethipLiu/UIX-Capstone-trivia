@@ -189,7 +189,7 @@ function makeResultObj(results) {
         let currentResult = results[game];
         console.log ("DOM.js line 197 makeResultObj  currentResults is...", currentResult);
 
-        $(`<div class="saved-Results">
+        $(`<div id="${game}" class="saved-Results">
         <h5>${currentResult.gameName}</h5> 
         <p>${currentResult.gameResult}</p> 
         <div class="result-footer">
