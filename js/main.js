@@ -3,10 +3,9 @@
 // console.log("Main.js is working");
 
 let $ = require('jquery'),
-  db = require("./db-interaction"),
-  templates = require("./dom-builder"),
-  user = require("./user"),
-  results = require("./results"),
+  db = require("./new-db-interaction"),
+  user = require("./new-user"),
+  results = require("./new-results"),
   dom = require("./dom-builder"),
   firebase = require("./fb-config");
 
@@ -25,11 +24,11 @@ $(document).ready(function() {
     console.log("clicked login");
     db.logInGoogle()
     .then((resolve) => {
-    console.log("Main.js line 29 Resolve from login", resolve.user.uid);
-    user.setUser(resolve.user.uid);
+    console.log("Main.js line 29 Resolve from login", resolve.user);
+    user.setUserVars(resolve.user); /* this gets the user object*/
+    user.checkUserFB(resolve.user.uid);
     $("#login").addClass("is-hidden");
     $("#logout").removeClass("is-hidden");
-    user.checkUserFB(resolve.user.uid);
     user.showUser(resolve.user.displayName);
     });
   });
@@ -56,9 +55,9 @@ $(document).ready(function() {
 
  // on click event listener to delete game results from firebase and the DOM
 
-$(".delete-btn").on("click", "#user-game-result", function() {
+$("#quiz-delete-result").on("click", "#user-game-result", function() {
   console.log("hit delete quiz result button");
-$("#user-game-result > div").remove();
+$("#user-game-result").remove();
 results.deleteResult();
 });
  

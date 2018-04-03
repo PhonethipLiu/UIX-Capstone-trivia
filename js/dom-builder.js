@@ -4,9 +4,9 @@
 
 let $ = require('jquery'),
     firebase = require("./fb-config"),
-    results = require("./results"),
-    db = require("./db-interaction"), 
-    user = require("./user");
+    results = require("./new-results"),
+    db = require("./new-db-interaction"), 
+    user = require("./new-user");
 
 // ***** Trivia[0] ******** //
 var gameCol = $("#quiz-display-area");
@@ -166,16 +166,18 @@ getTrivia().then((resolve) => {
         gameName : data[0].name,
         gameResult : data[0].results[2]
     };
-    results.makeResultObj(saveResult.gameName, saveResult.gameResult);
+    // results.makeResultObj();
+    // results.makeResultObj(saveResult.gameName, saveResult.gameResult);
     // console.log("line 168 of dom-builder.js : results.make call for trivia resolve data", saveResult.gameName, saveResult.gameResult);/* This shows the gameName and game Result passed in saveResult variable*/
-    buildResultObj(saveResult);
-    // console.log("DOM.js line 194: buildResultObj(resolve); what is resolve", resolve); /* This returns the trivia objects. */
+    // buildResultObj(saveResult);
+    // // console.log("DOM.js line 194: buildResultObj(resolve); what is resolve", resolve); /* This returns the trivia objects. */
     },
     (reject) => {
         console.log("DOH! something went wrong");
 });
 
-// THIS IS ENVOKED IN MAIN JS WITH EVENT LISTENER
+
+// ******* FUNCTION TO CREATE THE GAME QUESTIONS ONCE THE CAROUSEL IMGAE IS CLICKED -- IS ENVOKED IN MAIN JS WITH EVENT LISTENER ******//
 function loadGameResult(){
     console.log("DOM.js line 182: loadGameResult");
     getTrivia()
@@ -188,7 +190,7 @@ function loadGameResult(){
      });
     }
 
-//PRINT MODAL RESULTS TO DOM
+// ******* PRINT MODAL RESULTS TO DOM ******//
 function printGameResults(data){
     $("#user-game-result").append(`<div><h5>${data.gameName}</h5> <p>${data.gameResult}</p> <div class="result-footer">
     <button class="btn btn-secondary btn-sm delete-btn"  id="quiz-delete-result">Delete</button>
@@ -196,13 +198,13 @@ function printGameResults(data){
 </div></div>`);
 }
 
-// MAKE RESULT OBJ TO PRIN TO DOM IN DIV WITH #USER-GAME-RESULT 
+// MAKE RESULT OBJ TO PRINT TO DOM IN DIV WITH #USER-GAME-RESULT 
 // ENVOKED IN MAIN JS WITH EVENT LISTENER
-function buildResultObj(resolve){
-    results.editResult()
+function buildResultObj(){
+    results.getResultDetails()
     .then((resolve) => {
         let data = Object.values(resolve); 
-        console.log("DOM.js Line 2015: what is editResult resolve data? ", data);
+        console.log("DOM.js Line 206: what is getResultDetails resolve data? ", data);
         return printGameResults(data);
     });
   }
