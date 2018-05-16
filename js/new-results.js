@@ -31,15 +31,15 @@ function getResultDetails(user){
 }
 
 function addResult(results) {
-    console.log("RESULTS line 34:What is results",  results);
+    console.log("RESULTS line 34:What is results", results);
     return $.ajax({
         url: `${firebase.getFBsettings().databaseURL}/results.json`,
         type: 'POST',
         data: JSON.stringify(results),
         dataType: 'json'
-    }).done((resultsfbID) => {
-        console.log("results.js line 39: what is results?", resultsfbID, results.gameName, results.gameResult); /* This is the updated data for results with saved game results and game name */
-        return resultsfbID;
+    }).done((fbID) => {
+        console.log("results.js line 39: what is results?", fbID.name, results.gameName, results.gameResult); /* This is the updated data for results with saved game results and game name */
+        return fbID;
     });
 }
   
@@ -73,13 +73,23 @@ function editResult(resultsId) {
     .then((resolve) => {
         let data = Object.values(resolve);
         console.log("***** NEW-result.js line 87; make call for trivia resolve", data[0]); /* This returns the first object of trivia */
-    
+
         let resultNew = {
             uid: user.getUser(),
             gameName : data[0].name,
-            gameResult : data[0].results[2]
-        };    
+            gameResult : data[0].results[2],
+        }; 
+
+        // let fbID = addResult(resultNew);
         addResult(resultNew);
+        //     .then(result)
+
+        // console.log("fbID", fbID);
+
+        // // resultNew.fbID = addResult(resultNew);
+
+        // alert("resultNew", resultNew);
+
         return dom.printGameResults(resultNew);
          });
 }

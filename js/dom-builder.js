@@ -184,10 +184,12 @@ function printGameResults(resultNew){
 
 function makeResultObj(results) {
    
+    console.log("results:", results );
+
     for (let game in results){
 
         let currentResult = results[game];
-        console.log ("DOM.js line 197 makeResultObj  currentResults is...", currentResult);
+        console.log ("DOM.js line 192 makeResultObj currentResults is...", currentResult);
 
         $(`<div id="${game}" class="saved-Results">
         <h5>${currentResult.gameName}</h5> 

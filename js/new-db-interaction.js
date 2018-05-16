@@ -84,18 +84,18 @@ function getResultDetails(user){
 }
 
 // POST RESULTS / add data to FB
-function addResult(results) {
-    console.log("db.js: Line 97 results addUserResult", results);
-    return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/results.json`,
-        type: 'POST',
-        data: JSON.stringify(results),
-        dataType: 'json'
-    }).done((results) => {
-        console.log("*********** new-db-interaction line 98: what is addResult(results)? ***************", results);
-        return results;
-    });
-}
+// function addResult(results) {
+//     console.log("db.js: Line 97 results addUserResult", results);
+//     return $.ajax({
+//         url: `${firebase.getFBsettings().databaseURL}/results.json`,
+//         type: 'POST',
+//         data: JSON.stringify(results),
+//         dataType: 'json'
+//     }).done((results) => {
+//         console.log("*********** new-db-interaction line 98: what is addResult(results)? ***************", results);
+//         return results;
+//     });
+// }
   
 // delete results of quiz from user profile
 function deleteResult(fbID) {
@@ -128,7 +128,7 @@ function editResult(results) {
         logInGoogle,
         logOut,
         getResultDetails,   
-        addResult,
+        /*addResult,*/
         deleteResult,
         editResult
     };    
