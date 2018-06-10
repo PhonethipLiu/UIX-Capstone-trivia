@@ -10,4 +10,4 @@ function getKey() {
         };
 }
 
-module.exports = getKey;
+export default getKey;

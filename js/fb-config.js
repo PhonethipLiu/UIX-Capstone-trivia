@@ -2,13 +2,11 @@
 
 // console.log("Firebase config working");
 
-let firebase = require("firebase/app"),
-    fb = require("./fb-key"),
-    fbData = fb();
+import firebase, { initializeApp, getFBsettings } from "firebase/app";
+import fb from "./fb-key";
+let fbData = fb();
 
-require("firebase/auth");
-require("firebase/database");
-
+import "firebase/auth";import "firebase/database";
 // (function () {
 // Initialize Firebase
 var config = {
@@ -18,11 +16,11 @@ var config = {
     projectId: fbData.projectId,
     storageBucket: fbData.storageBucket
 };
-firebase.initializeApp(config);
+initializeApp(config);
 
-firebase.getFBsettings = () => {
+getFBsettings = () => {
     //   console.log("firebase getFBsettings", config);
       return config;
 };
 
-module.exports = firebase;
+export default firebase;

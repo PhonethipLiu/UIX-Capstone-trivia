@@ -2,11 +2,11 @@
 
 // console.log("dom builder in the haus");
 
-let $ = require('jquery'),
-    firebase = require("./fb-config"),
-    results = require("./new-results"),
-    db = require("./new-db-interaction"), 
-    user = require("./new-user");
+import $, { ajax } from "jquery";
+import { getFBsettings } from "./fb-config";
+import results from "./new-results";
+import db from "./new-db-interaction";
+import user from "./new-user";
 
 // ***** Trivia[0] ******** //
 var gameCol = $("#quiz-display-area");
@@ -14,8 +14,8 @@ var gameResult= {};
 
 // GET trivia content from firebase
 function getTrivia(trivia){
-    return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/trivia.json`
+    return ajax({
+        url: `${getFBsettings().databaseURL}/trivia.json`
     }).done((trivia) => {
         console.log("line 28 of dom-builder.js - get trivia game:", trivia);
         return trivia;    
@@ -202,9 +202,9 @@ function makeResultObj(results) {
     }
 }
 
-module.exports = {
+export default {
     getTrivia,
-    makeGame, 
+    makeGame,
     printGameResults,
     makeResultObj,
     loadGameResult

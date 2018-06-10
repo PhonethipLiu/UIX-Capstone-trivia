@@ -5,7 +5,7 @@
 let $ = require('jquery'),
     firebase = require("./fb-config"),
     db = require("./new-db-interaction"),
-    dom = require("./dom-builder"),
+    dom = require("./dom-builder").default,
     user = require("./new-user");
 
 // let uid = user.getUserObj();
@@ -47,13 +47,14 @@ function addResult(results) {
 function deleteResult(resultsId) {
     console.log("RESULTS.JS line 46: what is deleteUserResult?", resultsId);
     return $.ajax({
-        url: `${firebase.getFBsettings().databaseURL}/results/${resultsId}.json`,
+        url: `${firebase.getFBsettings().databaseURL}/results/${resultsId[0]}.json`,
         method: 'DELETE'
     }).done((data) => {
         console.log("RESULTS.JS line 51: deleteResult = data resolve:", data);
         return data;
     });
 }
+
 
 function editResult(resultsId) {
     return $.ajax({

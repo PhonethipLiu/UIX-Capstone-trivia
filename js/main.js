@@ -94,11 +94,11 @@ $(document).ready(function() {
 
     // alert("hi");
     
-    let resultsId = results.resultsId;
-    results.deleteResult(resultsId);
-      // .then(() => {
-      //   loadResultsToDom();
-      // });
+    let resultsId = $(this).results("resultId");
+    results.deleteResult(resultsId)
+      .then(() => {
+        loadResultsToDom();
+      });
 
     $($(this).closest(".saved-Results")).remove();
 
